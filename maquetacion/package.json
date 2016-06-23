@@ -1,0 +1,13 @@
+{
+  "name": "veramonte",
+  "description": "Descripción del tema",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-svgstore": "*",
+    "matchdep": "*"
+  }
+}

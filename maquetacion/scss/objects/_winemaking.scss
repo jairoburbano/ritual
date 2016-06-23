@@ -1,0 +1,245 @@
+/*------------------------------------*\
+$WINEMAKING
+\*------------------------------------*/
+.outstanding {
+    color: $destacado;
+    text-align: center;
+    margin-bottom: 60px;
+    @include respond-to(desktop) {
+        max-width: 680px;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    p {
+        @include font-size(20px, 35px);
+        font-weight: 700;
+    }
+}
+.single--winemaking {
+    padding: 0 20px;
+    @include respond-to(tablet) {
+        padding: 45px 30px 0;
+    }
+    .content__page {
+        .content__page__image {
+            margin-bottom: 25px;
+            @include respond-to(tablet) {
+                width: 40%;
+                float: left;
+                margin-left: 5%;
+            }
+        }
+        .content__page__text {
+            @include respond-to(tablet) {
+                width: 50%;
+                padding-left: 25px;
+                float: left;
+            }
+            p {
+                @include font-size(16px, 30px);
+                margin-bottom: 20px;
+                font-weight: 600;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .content__page__icons {
+            padding: 40px 0;
+            @include respond-to(tablet) {
+                padding: 25px 0 40px 0;
+            }
+            @include respond-to(desktop) {
+                padding: 25px 0 20px 0;
+            }
+            .page__icon {
+                height: 100px;
+                clear: both;
+                margin-bottom: 20px;
+                @include respond-to(tablet) {
+                    width: 25%;
+                    float: left;
+                    height: auto;
+                    clear: none;
+                }
+                @include respond-to(desktop) {
+                    height: 220px;
+                }
+                .page__icon__title {
+                    width: 70%;
+                    float: right;
+                    color: $destacado;
+                    position: relative;
+                    height: 100%;
+                    padding: 0 15px;
+                    @include respond-to(tablet) {
+                        width: 100%;
+                        display: block;
+                        text-align: right;
+                        float: none;
+                        height: 90px;
+                    }
+                    @include respond-to(desktop) {
+                        width: 56%;
+                        float: left;
+                        text-align: right;
+                        height: 100%;
+                    }
+                    h2 {
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        @include font-size(24px, 20px);
+                        width: 100%;
+                        left: 15px;
+                        font-family: woolen;
+                        font-weight: normal;
+                        @include respond-to(tablet) {
+                            position: relative;
+                            top: auto;
+                            left: auto;
+                            transform: translate(0, 0);
+                            @include font-size(34px, 21px);
+                        }
+                        @include respond-to(desktop) {
+                            position: absolute;
+                            top: 50%;
+                            transform: translate(0, -50%);
+                            left: auto;
+                            right: 10px;
+                        }
+                        span {
+                            color: darken($destacado, 10);
+                            font-size: cr(28px);
+                            display: block;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+                .page__icon__image {
+                    width: 30%;
+                    float: left;
+                    height: 100px;
+                    @include respond-to(tablet) {
+                        width: 100%;
+                    }
+                    @include respond-to(desktop) {
+                        height: 220px;
+                        width: 44%;
+                        float: right;
+                        margin-top: 10px;
+                    }
+                    img {
+                        height: 100%;
+                        width: auto;
+                        display: block;
+                        margin: auto;
+                    }
+                }
+                &:nth-child(2n) {
+                    .page__icon__title {
+                        float: left;
+                        text-align: right;
+                        @include respond-to(tablet) {
+                            float: none;
+                        }
+                        @include respond-to(desktop) {
+                            float: left;
+                        }
+                        h2 {
+                            left: auto;
+                            right: 15px;
+                            @include respond-to(tablet) {
+                                right: auto;
+                            }
+                            @include respond-to(desktop) {
+                                left: auto;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content__page__bajada {
+            text-align: center;
+            @include respond-to(tablet) {
+                padding: 0 30px;
+            }
+            @include respond-to(desktop) {
+                width: 660px;
+                margin: auto;
+                margin-bottom: 50px;
+                margin-top: 20px;
+                padding: 0;
+            }
+            p {
+                @include font-size(16px, 30px);
+                font-weight: 600;
+            }
+        }
+    }
+    .team {
+        padding-top: 30px;
+        @include respond-to(desktop) {
+            padding-top: 80px;
+        }
+        .team__item {
+            .team__item__image {
+                margin-bottom: 20px;
+                @include respond-to(tablet) {
+                    width: 50%;
+                    float: left;
+                }
+            }
+            .team__item__content {
+                @include respond-to(tablet) {
+                    width: 50%;
+                    float: left;
+                    padding-left: 30px;
+                }
+                .team__item__title {
+                    @include font-size(22px, 26.4px);
+                    text-transform: uppercase;
+                    @include respond-to(tablet) {
+                        @include font-size(30px, 36px);
+                    }
+
+                }
+                .team__item__ocupation {
+                    @include font-size(20px, 35px);
+                    color: $destacado;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    @include respond-to(tablet) {
+                        margin-bottom: 0;
+                    }
+                }
+                .team__item__text {
+                    p {
+                        @include font-size(16px, 30px);
+                        font-weight: 600;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                margin-top: 40px;
+                @include respond-to(desktop) {
+                    margin-top: 100px;
+                }
+                .team__item__image {
+                    @include respond-to(tablet) {
+                        float: right;
+                    }
+                }
+                .team__item__content {
+                    @include respond-to(tablet) {
+                        text-align: right;
+                        padding-left: 0;
+                        padding-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+}/*.single--winemaking*/

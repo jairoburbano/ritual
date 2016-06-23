@@ -1,0 +1,393 @@
+/*------------------------------------*\
+$NEWS
+\*------------------------------------*/
+.category {
+    padding: 0 10px;
+    max-width: 360px;
+    margin: auto;
+    @include respond-to(tablet) {
+        padding-top: 30px;
+    }
+    .category__tite {
+        width: 100%;
+        text-transform: uppercase;
+        color: $destacado;
+        border-bottom: 1px solid $destacado;
+        text-align: center;
+        padding-bottom: 10px;
+        span {
+            color: $principal;
+            text-transform: none;
+        }
+    }
+    .category__items {
+        padding: 0 10px;
+        margin-top: 15px;
+        .category__item {
+            padding: 0 15px;
+            height: 30px;
+            border: $background;
+            color: $background;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: cr(28px);
+            margin-right: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            overflow: hidden;
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                background: $background;
+                color: white;
+            }
+            @inclue respond-to(desktop) {
+                &:hover {
+                    background: $background;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.news__items {
+    padding: 0 10px;
+    display: flex;
+    flex-flow: row wrap;
+    @include respond-to(tablet) {
+        width: 640px;
+        margin: auto;
+        padding: 0;
+    }
+    .news__item {
+        width: 100%;
+        padding: 30px 0;
+        border-bottom: 1px solid $destacado;
+        .news__item__image {
+            max-height: 200px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            @include respond-to(tablet) {
+                max-height: 400px;
+                padding: 0 20px;
+            }
+            a {
+                display: block;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+        .news__item__content {
+            @include respond-to(tablet) {
+                padding: 0 20px;
+            }
+            .news__item__date {
+                color: $background;
+                margin-bottom: 10px;
+                p {
+                    @include font-size(16px, 30px);
+                }
+                a {
+                    color: $destacado;
+                    display: inline-block;
+                    @include font-size(16px, 30px);
+                }
+            }
+            .news__item__title {
+                @include font-size(18px, 30px);
+                font-weight: 400;
+                margin-bottom: 15px;
+                @include respond-to(tablet) {
+                    @include font-size(25px, 30px);
+                    font-weight: 600;
+                }
+                a {
+                    color: $principal;
+                    transition: all 300ms;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .news__item__more {
+                @include font-size(30px, 36px);
+                font-family: woolen;
+                color: $principal;
+                transition: all 300ms;
+                @include respond-to(tablet) {
+                    float: left;
+                    width: 150px;
+                }
+                &:hover {
+                    color: $destacado;
+                }
+            }
+        }
+        .single-share {
+            display: block;
+            float: none;
+            @include respond-to(tablet) {
+                float: right;
+                width: 300px;
+                text-align: right;
+                padding-top: 0;
+            }
+            a {
+                display: inline-block;
+                margin-left: 0;
+                margin-right: 30px;
+                @include respond-to(tablet) {
+                    margin-right: 0;
+                    margin-left: 30px;
+                }
+                svg {
+                    fill: $background;
+                    transition: all 300ms;
+                }
+                &:hover {
+                    svg {
+                        fill: $principal;
+                    }
+                }
+            }
+        }
+    }
+}
+.pagination {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    @include respond-to(tablet) {
+        text-align: right;
+        padding: 10px 0;
+    }
+    .pagination__item {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        a {
+            color: $destacado;
+            &.current {
+                color: $principal;
+            }
+        }
+    }
+}
+/*Single news*/
+.return {
+    width: 100%;
+    background: $background;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    height: 50px;
+    line-height: cr(50px);
+    display: block;
+    margin-bottom: 40px;
+    svg {
+        width: 13px;
+        height: 26px;
+        display: inline-block;
+        margin-right: 15px;
+        stroke: white;
+        margin-top: -8px;
+    }
+}
+.content__single__news {
+    padding: 0 10px;
+    @include respond-to(tablet) {
+        padding: 0 30px;
+    }
+    .content__single__news--top {
+        @include respond-to(desktop) {
+            width: 850px;
+            margin: auto;
+        }
+        .content__single__news__date {
+            margin-bottom: 15px;
+            color: $background;
+            text-align: center;
+            a {
+                display: inline-block;
+                color: $destacado;
+            }
+        }
+        .content__single__title {
+            @include font-size(20px, 24px);
+            text-align: center;
+            margin-bottom: 15px;
+            @include respond-to(tablet) {
+                @include font-size(38px, 45.6px);
+            }
+        }
+        .single-share {
+            display: block;
+            text-align: center;
+            float: none;
+            margin-bottom: 30px;
+            a {
+                svg {
+                    fill: $background;
+                    transition: all 300ms;
+                }
+                &:hover {
+                    svg {
+                        fill: $principal;
+                    }
+                }
+            }
+        }
+    }
+    .content__single__news--bottom {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        border-top: 1px solid $background;
+        @include respond-to(desktop) {
+            width: 700px;
+            margin: auto;
+            padding-top: 30px;
+        }
+        img {
+            margin-bottom: 30px;
+            display: block;
+            width: 100%;
+        }
+        p {
+            margin-bottom: 15px;
+            @include font-size(16px, 30px);
+            font-weight: 600;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.related__news {
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+    @include respond-to(tablet) {
+        padding: 0 25px;
+    }
+    @include respond-to(desktop) {
+        width: cr(1180px);
+        margin: auto;
+        padding: 0;
+    }
+    .related__title {
+        @include font-size(20px, 24px);
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+        color: $principal;
+        padding: 30px 0;
+        @include respond-to(tablet) {
+            @include font-size(30px, 36px);
+            padding: 60px 0 50px 0;
+        }
+        @include respond-to(desktop) {
+            padding: 70px 0 35px 0;
+        }
+    }
+    .related__news__item {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid $destacado;
+        background: $principal;
+        transition: all 300ms;
+        @include respond-to(tablet) {
+            width: 50%;
+        }
+        @include respond-to(desktop) {
+            width: calc(50% - 2px);
+            margin-right: 2px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &:hover {
+            background: $destacado;
+        }
+        .related__image {
+            opacity: .5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $level1;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .related__content {
+            position: relative;
+            z-index: $level2;
+            padding: 40px 20px;
+            display: block;
+            a {
+                color: white;
+            }
+            .related__news__date {
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: inline-block;
+                color: white;
+            }
+            .related__news__title {
+                @include font-size(20px, 24px);
+                margin-bottom: 10px;
+                color: white;
+                display: block;
+                @include respond-to(tablet) {
+                    @include font-size(25px, 30px);
+                }
+            }
+            .related__news__more {
+                @include font-size(30px, 36px);
+                font-family: woolen;
+                color: white;
+            }
+        }
+        &:last-child {
+            text-align: right;
+            border-bottom: none;
+        }
+    }
+}
+.news--flex {
+    .news__item {
+        @include respond-to(tablet) {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .news__item__image {
+            @include respond-to(tablet) {
+                width: 220px;
+                padding: 0;
+            }
+        }
+        .news__item__content {
+            @include respond-to(tablet) {
+                flex: 1;
+                padding: 0 0 0 20px;
+            }
+        }
+        .single-share {
+            @include respond-to(tablet) {
+                float: none;
+                display: block;
+                clear: both;
+                text-align: left;
+                a {
+                    margin: 0 30px 0 0;
+                }
+            }
+        }
+    }
+}

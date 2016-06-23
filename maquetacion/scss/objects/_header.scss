@@ -1,0 +1,315 @@
+/*------------------------------------*\
+$HEADER
+\*------------------------------------*/
+.header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $level9;
+    transition: all 300ms;
+    &.fill-header {
+        @include respond-to(tablet) {
+            background: $cream;
+            box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.2);
+        }
+        .slide-menu {
+            > .clearfix {
+                @include respond-to(tablet) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+        &.home-menu {
+            .logo {
+                @include respond-to(tablet) {
+                    top: 0;
+                    width: 100px;
+                }
+                svg {
+                    @include respond-to(tablet) {
+                        display: block;
+                        width: 100px;
+                        height: 30px;
+                        opacity: 1;
+                        fill: $principal;
+                    }
+                }
+            }
+        }
+        .logo {
+            &.inside {
+                @include respond-to(tablet) {
+                    top: 0px;
+                }
+            }
+            a {
+                @include respond-to(tablet) {
+                    height: 26px;
+                    margin-top: 5px;
+                }
+            }
+            img {
+                @include respond-to(tablet) {
+                    opacity: 0;
+                    height: 0;
+                }
+            }
+            svg {
+                @include respond-to(tablet) {
+                    display: block;
+                    width: 100px;
+                    height: 30px;
+                    opacity: 1;
+                    fill: $principal;
+                }
+            }
+        }
+        .menu {
+            @include respond-to(desktop) {
+                margin: 0 auto;
+                padding: 0;
+                max-width: cr(1180px);
+            }
+            li {
+                a {
+                    @include respond-to(tablet) {
+                        color: $principal;
+                    }
+                }
+            }
+        }
+        .box--half--menu{
+            &.redes {
+                @include respond-to(tablet) {
+                    width: 170px;
+                    border-bottom: none;
+                }
+                svg {
+                    @include respond-to(tablet) {
+                        fill: $principal
+                    }
+                }
+            }
+            &.language {
+                @include respond-to(tablet) {
+                    width: 220px;
+                    border-bottom: none;
+                }
+            }
+            .language--change {
+                a {
+                    @include respond-to(tablet) {
+                        color: $principal;
+                    }
+                }
+            }
+            .contact-us {
+                svg {
+                    @include respond-to(tablet) {
+                        fill: $principal;
+                    }
+                }
+            }
+            .search {
+                @include respond-to(tablet) {
+                    opacity: 0;
+                }
+                .send-group {
+                    svg {
+                        @include respond-to(tablet) {
+                            fill: $principal;
+                        }
+                    }
+                }
+            }
+        }
+        .menu {
+            @include respond-to(tablet) {
+                margin-top: 30px;
+                height: 30px;
+            }
+            @include respond-to(desktop) {
+                margin-top: 10px;
+            }
+            li {
+                @include respond-to(tablet) {
+                    margin-top: 10px;
+                }
+                @include respond-to(desktop) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    &.home-menu {
+        .logo, .icon-mobile {
+            svg {
+                fill: $principal;
+                @include respond-to(tablet) {
+                    fill: white;
+                }
+                @include respond-to(desktop) {
+                    opacity: 0;
+                }
+            }
+        }/*.logo, .icon-mobile*/
+    }/*&.home-menu*/
+}
+.line-top {
+    transition: all 300ms;
+    position: relative;
+    z-index: $level4;
+    &.active {
+        .logo, .icon-mobile {
+            svg {
+                fill: white;
+            }
+        }
+        .logo {
+            img {
+                opacity: 1;
+                &.logo-dark {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+.logo, .icon-mobile {
+    z-index: $level2;
+    position: relative;
+    padding: 20px 0 20px 10px;
+    float: left;
+    svg {
+        fill: white;
+        height: 37px;
+        width: 50px;
+        float: left;
+        transition: all 500ms;
+    }
+}/*.logo, .icon-mobile */
+.logo {
+    @include respond-to(tablet) {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 0;
+    }
+    @include respond-to(desktop) {
+        top: 10px;
+        height: 86px;
+    }
+    a {
+        display: block;
+        @include respond-to(tablet) {
+            height: 56px;
+            width: 100px;
+        }
+    }
+    &.inside {
+        @include respond-to(desktop) {
+            top: 10px;
+        }
+        svg {
+            @include respond-to(desktop) {
+                display: block;
+                width: 100px;
+                height: 30px;
+            }
+        }
+        img {
+            @include respond-to(desktop) {
+                width: 67px;
+                height: 56px;
+                display: block;
+                margin: auto;
+                float: none;
+            }
+            &.logo-dark {
+                display: none;
+            }
+        }
+    }
+    svg {
+        width: 185px;
+        height: 28px;
+        margin-top: 6px;
+        @include respond-to(tablet) {
+            display: none;
+            margin-top: 0;
+        }
+    }
+    img {
+        height: 37px;
+        width: 50px;
+        float: left;
+        transition: all 500ms;
+        @include respond-to(tablet) {
+            width: 60px;
+            height: 54px;
+            float: none;
+            margin: auto;
+            display: block;
+        }
+        @include respond-to(desktop) {
+            width: 90px;
+            height: 80px;
+        }
+        &.logo-dark {
+            display: block;
+            @include respond-to(tablet) {
+                display: none;
+            }
+        }
+    }
+}
+.home {
+    .header {
+        &.fill-header {
+            .line-top {
+                @include less-than(tablet) {
+                    background: $background;
+                    &.active {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        img {
+            opacity: 0;
+            transition: all 300ms;
+            @include respond-to(tablet) {
+                opacity: 1;
+            }
+            &.logo-dark {
+                opacity: 1;
+                position: absolute;
+                left: 10px;
+                top: 20px;
+                transition: all 300ms;
+                @include respond-to(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.icon-mobile {
+    float: right;
+    padding: 20px 10px 20px 0;
+    @include respond-to(tablet) {
+        display: none;
+    }
+    svg {
+        width: 40px;
+        float: right;
+    }
+}/*.icon-mobile*/

@@ -1,0 +1,50 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    height: 100%;
+    color: $principal;
+    font-family: 'Crimson Text', serif;
+    background: $cream;
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+}
+.neuzei-reg {
+    font-family: NeuzeiRegular;
+}
+.neuzei-bold {
+    font-family: NeuzeitBold;
+}
+.woolen {
+    font-family: Woolen;
+}
+h1 {
+    @include font-size(38px, 45.6px);
+}
+h2 {
+    @include font-size(30px, 36px);
+}
+h3 {
+    @include font-size(20px, 35px);
+}
+h4 {
+    @include font-size(16px, 20px);
+}
+.bajada {
+    @include font-size(34px, 40.8px);
+}
+p {
+    @include font-size(16px, 22px);
+    &.big {
+        @include font-size(18px, 22px);
+    }
+}
+img {
+    max-width: 100%;
+}
+svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+    transition: all 300ms;
+}

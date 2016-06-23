@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    		$BOX
+\*------------------------------------*/
+.box--flex {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}/*.box--flex*/
+.full-box {
+    width: 100%;
+    padding: 0 10px;
+    @include respond-to(tablet) {
+        padding: 0 20px;
+    }
+    @include respond-to(desktop) {
+        padding: 0;
+    }
+}
+.box--half {
+    width: 100%;
+    @include respond-to(tablet) {
+        width: 50%;
+    }
+}/*.box--half*/
+.box--third--tablet {
+    @include respond-to(tablet) {
+        width: (100% / 3);
+    }
+}

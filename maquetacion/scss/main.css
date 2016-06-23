@@ -1,0 +1,4515 @@
+@charset "UTF-8";
+/*!
+Theme Name: Ritual
+Version: 1.0.0
+Author: Agencia Digital Reactor
+Author URI: http://reactor.cl/
+*/
+/*------------------------------------*    $TABLA DE CONTENIDO
+    Basado en la Guia de Harry Robert https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * SETTINGS...........Declaración de Variables SASS
+ * BITS...............Funciones y Mixins de SASS
+ * RESET..............Mezcla de reset de Boilerplate y Normalize
+ * ZINDEX.............Archivo con todos los z-index que se usan en el proyecto
+ *
+ * PLUGINS............Estilos de los Plugins usados
+ *
+ * SVG................Código de algunos SVG usados en la página
+ *
+ * GLOBAL CLASSES.....Clases que se usan en todo el sitio
+ * MAIN...............Declaraciones de alto nivel
+ * GRIDS..............Grids para la página
+ * LINKS..............Estilos de los Links
+ *
+ * HEADER.............Elementos de la cabecera
+ * LOGO...............Logo de la página web
+ * NAV................Menú
+ * FOOTER.............Footer de la página
+ *
+ * FORM...............Estilos de formulario
+ * BTN.......,........Botones de la página
+ * HERO...............Banner superior
+ * BREADCRUMBS........Navegación de breadcrumbs
+ *
+ * HELPERS............Clases de ayuda
+ * PRINT..............Estilos de impresión
+ */
+/*------------------------------------*    $GENERIC
+\*------------------------------------*/
+/* =============================================================================
+   				Functions
+   ========================================================================== */
+/* =============================================================================
+   				Mixins
+   ========================================================================== */
+/*Media Queries*/
+/*------------------------------------*$SETTINGS
+\*------------------------------------*/
+/* ============== // Transition // ============== */
+/* ============== // FONTS // ============== */
+@font-face {
+  font-family: NeuzeitBold;
+  src: url(../fonts/NeuzeitGro-Bol.otf); }
+
+@font-face {
+  font-family: NeuzeiRegular;
+  src: url(../fonts/NeuzeitGro-Reg.otf); }
+
+@font-face {
+  font-family: Woolen;
+  src: url(../fonts/Woolen.otf); }
+
+/* ============== // COLORS // ============== */
+/*------------------------------------*	$GENERIC
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 7, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+html {
+  font-family: sans-serif;
+  font-size: 1em;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+/* line 13, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+body {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  margin: 0; }
+
+/* line 19, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+::-moz-selection {
+  background: #000;
+  color: white;
+  text-shadow: none; }
+
+/* line 25, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+::selection {
+  background: #000;
+  color: white;
+  text-shadow: none; }
+
+/* line 43, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/* line 52, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
+  margin: 0;
+  padding: 0; }
+
+/* line 57, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+ul, ol {
+  list-style: none; }
+
+/* line 64, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+/* line 68, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* line 73, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+[hidden],
+template {
+  display: none; }
+
+/* line 77, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/* line 80, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+img {
+  border: 0; }
+
+/* line 83, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* line 91, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+/* line 96, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+button {
+  overflow: visible; }
+
+/* line 100, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+button,
+select {
+  text-transform: none; }
+
+/* line 106, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+button,
+html input[type="button"], input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/* line 111, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/* line 115, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* line 119, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+input {
+  line-height: normal; }
+
+/* line 123, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0; }
+
+/* line 127, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/* line 130, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* line 138, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* line 141, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/* line 146, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+legend {
+  border: 0;
+  padding: 0; }
+
+/* line 150, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+textarea {
+  resize: vertical;
+  overflow: auto; }
+
+/* line 154, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+optgroup {
+  font-weight: bold; }
+
+/* line 158, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 164, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+td,
+th {
+  padding: 0; }
+
+/* line 171, C:/wamp/www/ritual/maquetacion/scss/generic/_reset.scss */
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*------------------------------------*    		$Z-INDEX
+\*------------------------------------*/
+/*------------------------------------*    $PLUGINS
+\*------------------------------------*/
+/*------------------------------------*    		$PLUGINS
+\*------------------------------------*/
+/*------------------------------------*    $SVG
+\*------------------------------------*/
+/*------------------------------------*    $GLOBAL ELEMENTS
+\*------------------------------------*/
+/* line 1, C:/wamp/www/ritual/maquetacion/scss/base/_global-classes.scss */
+.wrap {
+  margin: auto;
+  max-width: 73.75rem;
+  position: relative; }
+
+/* line 6, C:/wamp/www/ritual/maquetacion/scss/base/_global-classes.scss */
+.no-mobile {
+  display: none; }
+  @media (min-width: 740px) {
+    /* line 6, C:/wamp/www/ritual/maquetacion/scss/base/_global-classes.scss */
+    .no-mobile {
+      display: block; } }
+
+/*------------------------------------*$MAIN
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+html, body {
+  height: 100%;
+  color: #000;
+  font-family: 'Crimson Text', serif;
+  background: #f8f4e9; }
+
+/* line 10, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+.neuzei-reg {
+  font-family: NeuzeiRegular; }
+
+/* line 13, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+.neuzei-bold {
+  font-family: NeuzeitBold; }
+
+/* line 16, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+.woolen {
+  font-family: Woolen; }
+
+/* line 19, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+h1 {
+  line-height: 45.6px;
+  line-height: 2.85rem;
+  font-size: 38px;
+  font-size: 2.375rem; }
+
+/* line 22, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+h2 {
+  line-height: 36px;
+  line-height: 2.25rem;
+  font-size: 30px;
+  font-size: 1.875rem; }
+
+/* line 25, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+h3 {
+  line-height: 35px;
+  line-height: 2.1875rem;
+  font-size: 20px;
+  font-size: 1.25rem; }
+
+/* line 28, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+h4 {
+  line-height: 20px;
+  line-height: 1.25rem;
+  font-size: 16px;
+  font-size: 1rem; }
+
+/* line 31, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+.bajada {
+  line-height: 40.8px;
+  line-height: 2.55rem;
+  font-size: 34px;
+  font-size: 2.125rem; }
+
+/* line 34, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+p {
+  line-height: 22px;
+  line-height: 1.375rem;
+  font-size: 16px;
+  font-size: 1rem; }
+  /* line 36, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+  p.big {
+    line-height: 22px;
+    line-height: 1.375rem;
+    font-size: 18px;
+    font-size: 1.125rem; }
+
+/* line 40, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+img {
+  width: 100%; }
+
+/* line 43, C:/wamp/www/ritual/maquetacion/scss/base/_main.scss */
+svg {
+  width: 100%;
+  height: 100%;
+  fill: white;
+  transition: all 300ms; }
+
+/* line 1, C:/wamp/www/ritual/maquetacion/scss/base/_links.scss */
+a {
+  text-decoration: none;
+  background: transparent; }
+  /* line 4, C:/wamp/www/ritual/maquetacion/scss/base/_links.scss */
+  a:active, a:hover {
+    outline: 0; }
+
+/*------------------------------------*    $PAGE STRUCTURE - GENERAL
+\*------------------------------------*/
+/*------------------------------------*$HEADER
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+.header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*&.home-menu*/ }
+  /* line 10, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .header.home-menu {
+    /*.logo, .icon-mobile*/ }
+    /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+    .header.home-menu .logo svg, .header.home-menu .icon-mobile svg {
+      fill: #000; }
+      @media (min-width: 740px) {
+        /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+        .header.home-menu .logo svg, .header.home-menu .icon-mobile svg {
+          fill: white; } }
+
+/* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+.line-top {
+  transition: all 300ms;
+  position: relative;
+  z-index: 400; }
+  /* line 27, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .line-top.active .logo svg, .line-top.active .icon-mobile svg {
+    fill: white; }
+
+/* line 33, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+.logo, .icon-mobile {
+  z-index: 200;
+  position: relative;
+  padding: 20px 0 20px 10px;
+  float: left; }
+  /* line 38, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo svg, .icon-mobile svg {
+    fill: white;
+    height: 37px;
+    width: 50px;
+    float: left;
+    transition: all 500ms; }
+    /* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+    .logo svg:nth-child(2), .icon-mobile svg:nth-child(2) {
+      width: 185px;
+      height: 28px;
+      margin-top: 6px; }
+      @media (min-width: 740px) {
+        /* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+        .logo svg:nth-child(2), .icon-mobile svg:nth-child(2) {
+          display: none; } }
+
+/*.logo, .icon-mobile */
+@media (min-width: 740px) {
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0; } }
+
+@media (min-width: 1180px) {
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo {
+    top: 30px; } }
+
+@media (min-width: 1180px) {
+  /* line 65, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo.inside {
+    top: 10px; } }
+
+@media (min-width: 1180px) {
+  /* line 69, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo.inside svg {
+    width: 67px;
+    height: 56px;
+    display: block;
+    margin: auto;
+    float: none; } }
+
+@media (min-width: 1180px) {
+  /* line 77, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo.inside svg:nth-child(2) {
+    display: block;
+    width: 100px;
+    height: 30px; } }
+
+@media (min-width: 740px) {
+  /* line 86, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo svg {
+    width: 60px;
+    height: 54px; } }
+
+@media (min-width: 1180px) {
+  /* line 86, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .logo svg {
+    width: 90px;
+    height: 80px; } }
+
+/* line 97, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+.icon-mobile {
+  float: right;
+  padding: 20px 10px 20px 0; }
+  @media (min-width: 740px) {
+    /* line 97, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+    .icon-mobile {
+      display: none; } }
+  /* line 103, C:/wamp/www/ritual/maquetacion/scss/objects/_header.scss */
+  .icon-mobile svg {
+    width: 40px;
+    float: right; }
+
+/*.icon-mobile*/
+/*------------------------------------*    		$LOGO
+\*------------------------------------*/
+/*------------------------------------*$NAV
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+.slide-menu {
+  position: relative;
+  display: none;
+  background: rgba(0, 0, 0, 0.9);
+  top: -77px;
+  width: 100%;
+  z-index: 300; }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .slide-menu {
+      display: block;
+      background-color: transparent;
+      top: 0; } }
+
+/* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+.menu {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 82px 15px 85px;
+  width: 100%;
+  position: relative; }
+  @media (min-width: 740px) {
+    /* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .menu {
+      display: block;
+      padding: 5px 0 0;
+      height: 40px;
+      text-align: center;
+      margin-top: 10px; } }
+  /* line 31, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+  .menu a {
+    width: 100%;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin: 15px 0 10px 0;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700; }
+    @media (min-width: 740px) {
+      /* line 31, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .menu a {
+        width: auto;
+        display: inline-block;
+        line-height: 19.2px;
+        line-height: 1.2rem;
+        font-size: 16px;
+        font-size: 1rem;
+        margin: 15px 15px 10px;
+        text-transform: none; } }
+    @media (min-width: 1180px) {
+      /* line 45, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .menu a:nth-child(4) {
+        margin-left: 185px; } }
+    @media (min-width: 1180px) {
+      /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .menu a:last-child {
+        margin-right: 185px; } }
+
+/* line 57, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+.box--half--menu {
+  width: 100%;
+  padding: 0 15px 0;
+  height: 50px;
+  /*.search*/
+  /*.contact-us*/
+  /*.language--change*/ }
+  @media (min-width: 740px) {
+    /* line 61, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu.language {
+      width: calc(50% - 65px);
+      float: right;
+      text-align: right;
+      height: 40px;
+      margin-right: 15px;
+      padding: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); } }
+  @media (min-width: 740px) {
+    /* line 61, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu.language {
+      width: calc(50% - 80px); } }
+  /* line 74, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+  .box--half--menu.language a {
+    line-height: 14.4px;
+    line-height: 0.9rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: .5;
+    transition: all 300ms;
+    color: white; }
+    /* line 80, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu.language a.hover {
+      opacity: 1; }
+    @media (min-width: 740px) {
+      /* line 74, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu.language a {
+        display: inline-block;
+        vertical-align: top;
+        padding: 12px 0;
+        margin-left: 15px; } }
+  /* line 91, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+  .box--half--menu .search {
+    position: absolute;
+    top: 77px;
+    left: 15px;
+    z-index: 200;
+    height: 50px;
+    width: calc(100% - 30px);
+    /*.send-group*/ }
+    @media (min-width: 740px) {
+      /* line 91, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .search {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 20px;
+        display: inline-block;
+        height: 40px; } }
+    /* line 106, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .search.open {
+      width: 110px; }
+      @media (min-width: 1180px) {
+        /* line 106, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search.open {
+          width: 200px; } }
+      @media (min-width: 740px) {
+        /* line 111, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search.open .input-group {
+          display: block;
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 5px;
+          overflow: hidden; } }
+      @media (min-width: 740px) {
+        /* line 119, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search.open .send-group {
+          right: 5px; } }
+      @media (min-width: 740px) {
+        /* line 123, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search.open .send-group svg {
+          z-index: 200; } }
+      @media (min-width: 740px) {
+        /* line 128, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search.open .send-group input {
+          z-index: 300; } }
+    /* line 135, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .search input {
+      background-color: transparent;
+      border: none; }
+      /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .search input:focus {
+        outline: none; }
+    /* line 142, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .search .input-group {
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+      @media (min-width: 740px) {
+        /* line 142, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search .input-group {
+          display: block;
+          border: none;
+          transition: all 300ms;
+          background-color: transparent;
+          height: 24px;
+          margin-top: 8px;
+          width: 100%; } }
+      /* line 155, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .search .input-group input {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        line-height: 3.125rem;
+        font-size: 16px;
+        font-size: 1rem;
+        color: white;
+        padding: 0 50px 0 10px; }
+        @media (min-width: 740px) {
+          /* line 155, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+          .box--half--menu .search .input-group input {
+            line-height: 1.5rem;
+            height: 24px; } }
+    /* line 167, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .search .send-group {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: 25px;
+      top: 50%;
+      transform: translate(0, -50%); }
+      @media (min-width: 740px) {
+        /* line 167, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .search .send-group {
+          right: 0;
+          transition: all 300ms; } }
+      /* line 178, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .search .send-group svg {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        fill: white; }
+        @media (min-width: 740px) {
+          /* line 178, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+          .box--half--menu .search .send-group svg {
+            z-index: 300;
+            transition: all 300ms; } }
+      /* line 189, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .search .send-group input {
+        z-index: 200; }
+        @media (min-width: 740px) {
+          /* line 189, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+          .box--half--menu .search .send-group input {
+            z-index: 200;
+            width: 100%;
+            padding: 0;
+            position: relative; } }
+  /* line 200, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+  .box--half--menu .contact-us {
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
+    z-index: 200;
+    height: 50px;
+    padding: 17px 15px; }
+    @media (min-width: 740px) {
+      /* line 200, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .contact-us {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        height: 40px;
+        margin-right: 10px; } }
+    /* line 214, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .contact-us svg {
+      width: 23px;
+      height: 16px;
+      fill: white; }
+  /* line 220, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+  .box--half--menu .language--change {
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    z-index: 200; }
+    @media (min-width: 740px) {
+      /* line 220, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .language--change {
+        position: relative;
+        bottom: auto;
+        float: right;
+        height: 40px; } }
+    /* line 231, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .language--change a {
+      line-height: 35px;
+      line-height: 2.1875rem;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-right: 10px; }
+      @media (min-width: 740px) {
+        /* line 231, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+        .box--half--menu .language--change a {
+          padding: 0;
+          line-height: 2.5rem;
+          margin: 0 0 0 5px; } }
+      /* line 240, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu .language--change a.active {
+        opacity: 1; }
+    /* line 244, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu .language--change span {
+      display: inline-block;
+      color: white;
+      line-height: 2.5rem;
+      margin-left: 5px; }
+  /* line 251, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+  .box--half--menu.redes {
+    position: absolute;
+    bottom: 35px;
+    left: 15px;
+    width: calc(100% - 30px);
+    padding: 17px 0;
+    z-index: 200;
+    height: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-left: 5px; }
+    @media (min-width: 740px) {
+      /* line 251, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu.redes {
+        width: calc(50% - 65px);
+        float: left;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        border-top: none;
+        height: 40px;
+        padding: 12px 0 12px 20px;
+        margin-left: 15px; } }
+    @media (min-width: 740px) {
+      /* line 251, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu.redes {
+        width: calc(50% - 80px); } }
+    /* line 276, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+    .box--half--menu.redes svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+      margin-right: 30px;
+      opacity: .5;
+      transition: all 300ms;
+      vertical-align: top; }
+      /* line 284, C:/wamp/www/ritual/maquetacion/scss/objects/_nav.scss */
+      .box--half--menu.redes svg:hover {
+        opacity: 1; }
+
+/*.box--half*/
+/*------------------------------------*$BANNER
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+.banner {
+  padding-top: 80px;
+  background-size: cover;
+  background-position: center;
+  height: 80px;
+  /*&.banner--principal*/ }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+    .banner {
+      padding-top: 100px;
+      height: 320px; } }
+  /* line 13, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+  .banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
+    @media (min-width: 740px) {
+      /* line 13, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+      .banner::after {
+        height: 320px; } }
+  /* line 27, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+  .banner.banner--principal {
+    height: 100%;
+    position: relative;
+    /*.banner__content*/ }
+    @media (min-width: 1180px) {
+      /* line 27, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+      .banner.banner--principal {
+        padding-top: 150px; } }
+    /* line 33, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+    .banner.banner--principal::after {
+      height: 570px;
+      display: none;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%); }
+      @media (min-width: 740px) {
+        /* line 33, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+        .banner.banner--principal::after {
+          display: block;
+          height: 385px; } }
+      @media (min-width: 1180px) {
+        /* line 33, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+        .banner.banner--principal::after {
+          height: 570px; } }
+    /* line 45, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+    .banner.banner--principal .banner__content {
+      position: relative;
+      z-index: 200;
+      height: 100%;
+      /*.banner__logo*/
+      /*.banner__text*/
+      /*.banner__scroll*/ }
+      /* line 49, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+      .banner.banner--principal .banner__content .banner__logo {
+        width: 408px;
+        margin: auto; }
+        @media (min-width: 1180px) {
+          /* line 49, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+          .banner.banner--principal .banner__content .banner__logo {
+            width: 605px; } }
+        /* line 55, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+        .banner.banner--principal .banner__content .banner__logo svg {
+          fill: #f8f4e9; }
+      /* line 59, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+      .banner.banner--principal .banner__content .banner__text {
+        width: 570px;
+        margin: auto;
+        text-align: center; }
+        @media (min-width: 1180px) {
+          /* line 59, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+          .banner.banner--principal .banner__content .banner__text {
+            width: 700px;
+            margin-top: 20px; } }
+        /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+        .banner.banner--principal .banner__content .banner__text p {
+          line-height: 40px;
+          line-height: 2.5rem;
+          font-size: 40px;
+          font-size: 2.5rem;
+          font-family: woolen;
+          color: #f8f4e9; }
+          @media (min-width: 1180px) {
+            /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+            .banner.banner--principal .banner__content .banner__text p {
+              line-height: 45px;
+              line-height: 2.8125rem;
+              font-size: 45px;
+              font-size: 2.8125rem; } }
+      /* line 76, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+      .banner.banner--principal .banner__content .banner__scroll {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        color: white;
+        line-height: 14.4px;
+        line-height: 0.9rem;
+        font-size: 12px;
+        font-size: 0.75rem;
+        cursor: pointer; }
+        /* line 85, C:/wamp/www/ritual/maquetacion/scss/objects/_banner.scss */
+        .banner.banner--principal .banner__content .banner__scroll svg {
+          fill: transparent;
+          stroke: white;
+          width: 26px;
+          height: 13px; }
+
+/*.banner*/
+/*------------------------------------*$HEADLINE
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+.headline {
+  text-align: center;
+  padding-top: 20px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  /*&.headline--big*/
+  /*&.headline--button*/
+  /*.headline--absolute*/
+  /*.headline__logo*/
+  /*.headline__title*/
+  /*.headline__text*/ }
+  /* line 10, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline.headline--big {
+    padding: 25px 0 30px 0;
+    /*.headline__title*/
+    /*.headline__text*/ }
+    @media (min-width: 740px) {
+      /* line 10, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline--big {
+        padding: 50px 0 30px 0; } }
+    /* line 15, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline--big .headline__title {
+      line-height: 28px;
+      line-height: 1.75rem;
+      font-size: 30px;
+      font-size: 1.875rem;
+      color: #000; }
+      @media (min-width: 740px) {
+        /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+        .headline.headline--big .headline__title::after, .headline.headline--big .headline__title::before {
+          background: rgba(0, 0, 0, 0.5); } }
+    /* line 24, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline--big .headline__text {
+      color: #000;
+      line-height: 33.6px;
+      line-height: 2.1rem;
+      font-size: 28px;
+      font-size: 1.75rem; }
+  @media (min-width: 740px) {
+    /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline--contrast .headline__title {
+      color: white; }
+      /* line 33, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline--contrast .headline__title::after, .headline.headline--contrast .headline__title::before {
+        background: rgba(255, 255, 255, 0.5); } }
+  @media (min-width: 740px) {
+    /* line 38, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline--contrast .headline__text {
+      color: white; } }
+  /* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline.headline--button {
+    width: 210px;
+    height: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    background: #d6b990;
+    border-radius: 18px;
+    padding: 0;
+    margin: -16px auto 0;
+    z-index: 300;
+    position: relative;
+    /*.headline__title {*/ }
+    @media (min-width: 740px) {
+      /* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline--button {
+        line-height: 45.6px;
+        line-height: 2.85rem;
+        font-size: 38px;
+        font-size: 2.375rem;
+        margin: 15px auto; }
+        /* line 58, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+        .headline.headline--button::after, .headline.headline--button::before {
+          content: '';
+          height: 1px;
+          width: 115px;
+          background: rgba(214, 185, 144, 0.5);
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -235px; }
+        /* line 68, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+        .headline.headline--button::after {
+          margin-left: 130px; } }
+    @media (min-width: 740px) {
+      /* line 74, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline--button .headline__title::after, .headline.headline--button .headline__title::before {
+        display: none; } }
+    /* line 79, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline--button a {
+      color: white;
+      line-height: 40px;
+      line-height: 2.5rem;
+      font-size: 16px;
+      font-size: 1rem;
+      vertical-align: top; }
+  @media (min-width: 740px) {
+    /* line 88, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline__dark .headline__logo svg {
+      fill: white; } }
+  /* line 93, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline.headline__dark .headline__title {
+    color: #000; }
+    @media (min-width: 740px) {
+      /* line 93, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline__dark .headline__title {
+        color: white; } }
+  /* line 99, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline.headline__dark .headline__text {
+    color: #000; }
+    @media (min-width: 740px) {
+      /* line 99, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline__dark .headline__text {
+        color: white; } }
+  @media (min-width: 740px) {
+    /* line 106, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline__dark.headline__dark--always .headline__title {
+      color: #000; }
+      /* line 109, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline__dark.headline__dark--always .headline__title::after, .headline.headline__dark.headline__dark--always .headline__title::before {
+        background: #000; } }
+  @media (min-width: 740px) {
+    /* line 114, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline.headline__dark.headline__dark--always .headline__text {
+      color: #000; } }
+  /* line 121, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline.headline--absolute {
+    margin-bottom: 30px; }
+    @media (min-width: 740px) {
+      /* line 121, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline.headline--absolute {
+        position: absolute;
+        left: 50%;
+        top: 150px;
+        transform: translate(-50%, 0); } }
+  /* line 130, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline .headline__logo {
+    height: 35px;
+    margin-bottom: 15px; }
+    /* line 133, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+    .headline .headline__logo svg {
+      fill: #000;
+      margin: auto; }
+  /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline .headline__title {
+    line-height: 28px;
+    line-height: 1.75rem;
+    font-size: 26px;
+    font-size: 1.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white; }
+    @media (min-width: 740px) {
+      /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline .headline__title {
+        line-height: 45.6px;
+        line-height: 2.85rem;
+        font-size: 38px;
+        font-size: 2.375rem; }
+        /* line 145, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+        .headline .headline__title::after, .headline .headline__title::before {
+          content: '';
+          height: 1px;
+          width: 115px;
+          display: inline-block;
+          margin: 0 25px;
+          background: rgba(255, 255, 255, 0.5);
+          vertical-align: middle; } }
+  /* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+  .headline .headline__text {
+    line-height: 28.8px;
+    line-height: 1.8rem;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-family: Woolen;
+    color: white; }
+    @media (min-width: 740px) {
+      /* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_headline.scss */
+      .headline .headline__text {
+        line-height: 40.8px;
+        line-height: 2.55rem;
+        font-size: 34px;
+        font-size: 2.125rem; } }
+
+/*.headline*/
+/*------------------------------------*    		$BOX
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+.box--flex {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%; }
+
+/*.box--flex*/
+/* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+.full-box {
+  width: 100%;
+  padding: 0 10px; }
+  @media (min-width: 740px) {
+    /* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+    .full-box {
+      padding: 0 20px; } }
+  @media (min-width: 1180px) {
+    /* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+    .full-box {
+      padding: 0; } }
+
+/* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+.box--half {
+  width: 100%; }
+  @media (min-width: 740px) {
+    /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+    .box--half {
+      width: 50%; } }
+
+/*.box--half*/
+@media (min-width: 740px) {
+  /* line 25, C:/wamp/www/ritual/maquetacion/scss/objects/_box.scss */
+  .box--third--tablet {
+    width: 33.33333%; } }
+
+/*------------------------------------*$INDEX
+\*------------------------------------*/
+@media (min-width: 740px) {
+  /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_index.scss */
+  .down-text {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px; }
+    /* line 10, C:/wamp/www/ritual/maquetacion/scss/objects/_index.scss */
+    .down-text p {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+/* line 15, C:/wamp/www/ritual/maquetacion/scss/objects/_index.scss */
+.lets-gater--home {
+  position: relative;
+  background-size: 100% 480px;
+  background-repeat: no-repeat; }
+  @media (max-width: 740px) {
+    /* line 15, C:/wamp/www/ritual/maquetacion/scss/objects/_index.scss */
+    .lets-gater--home {
+      background-image: none !important; } }
+  @media (min-width: 1180px) {
+    /* line 15, C:/wamp/www/ritual/maquetacion/scss/objects/_index.scss */
+    .lets-gater--home {
+      background-size: 100% 600px; } }
+  /* line 25, C:/wamp/www/ritual/maquetacion/scss/objects/_index.scss */
+  .lets-gater--home::after {
+    content: '';
+    height: 380px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+/*------------------------------------*$WINE
+\*------------------------------------*/
+@media (min-width: 740px) {
+  /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .wines--home {
+    margin-bottom: 150px; } }
+
+/* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.item--wine--special:first-child .item--wine .item--wine__background {
+  transform: translate(-50%, 0); }
+  @media (min-width: 1180px) {
+    /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine--special:first-child .item--wine .item--wine__background {
+      bottom: 0; } }
+  /* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special:first-child .item--wine .item--wine__background svg {
+    float: left; }
+    @media (min-width: 1180px) {
+      /* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+      .item--wine--special:first-child .item--wine .item--wine__background svg {
+        margin-left: 130px; } }
+
+@media (min-width: 740px) {
+  /* line 25, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special:first-child .item--wine .item--wine__content .item--wine__text {
+    float: left;
+    text-align: right; } }
+
+/* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.item--wine--special:first-child .item--wine .item--wine__content .item--wine__text .item--wine__logo {
+  float: right; }
+
+@media (min-width: 740px) {
+  /* line 33, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special:first-child .item--wine .item--wine__content .item--wine__text .item-wine__content-text {
+    float: right; } }
+
+@media (min-width: 740px) {
+  /* line 39, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special:first-child .item--wine .item--wine__content .item--wine__image {
+    float: left; } }
+
+@media (min-width: 1180px) {
+  /* line 47, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine {
+    padding: 0 70px; } }
+
+@media (min-width: 740px) {
+  /* line 51, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine .item--wine__background {
+    width: calc(100% - 50px);
+    height: 220px;
+    top: auto;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-40%, 0); }
+    /* line 59, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine--special .item--wine .item--wine__background svg {
+      float: right;
+      width: 290px; } }
+
+@media (min-width: 1180px) {
+  /* line 51, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine .item--wine__background {
+    bottom: 20px;
+    height: 280px; }
+    /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine--special .item--wine .item--wine__background svg {
+      float: left;
+      margin-left: 70px; } }
+
+@media (min-width: 740px) {
+  /* line 74, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine .item--wine__content .item--wine__text {
+    float: right;
+    width: 53%; } }
+
+@media (min-width: 1180px) {
+  /* line 74, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine .item--wine__content .item--wine__text {
+    width: 64%;
+    padding-top: 80px; } }
+
+@media (min-width: 740px) {
+  /* line 84, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine .item--wine__content .item--wine__image {
+    float: right;
+    width: 47%; } }
+
+@media (min-width: 1180px) {
+  /* line 84, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine--special .item--wine .item--wine__content .item--wine__image {
+    width: 36%; } }
+
+/*&.item--wine--special*/
+/* line 96, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.item--wine {
+  width: 100%;
+  height: 260px;
+  display: block;
+  position: relative;
+  padding: 0 25px;
+  /*.item--wine__background*/
+  /*.item--wine__content*/ }
+  @media (min-width: 740px) {
+    /* line 96, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine {
+      height: 450px;
+      overflow: hidden; } }
+  @media (min-width: 1180px) {
+    /* line 111, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine:hover .item--wine__content .item--wine__text .item-wine__content-text .item-wine__more {
+      opacity: 1; } }
+  /* line 124, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.pinot .item--wine__content .item--wine__text .item--wine__logo svg {
+    fill: #965550; }
+  /* line 130, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.pinot .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title a {
+    color: #965550; }
+  /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.pinot .item--wine__background svg {
+    fill: #965550; }
+  /* line 124, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.sauvignon .item--wine__content .item--wine__text .item--wine__logo svg {
+    fill: #4b7355; }
+  /* line 130, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.sauvignon .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title a {
+    color: #4b7355; }
+  /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.sauvignon .item--wine__background svg {
+    fill: #4b7355; }
+  /* line 124, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.rose .item--wine__content .item--wine__text .item--wine__logo svg {
+    fill: #bd9db1; }
+  /* line 130, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.rose .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title a {
+    color: #bd9db1; }
+  /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.rose .item--wine__background svg {
+    fill: #bd9db1; }
+  /* line 124, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.chardonnay .item--wine__content .item--wine__text .item--wine__logo svg {
+    fill: #b3b0af; }
+  /* line 130, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.chardonnay .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title a {
+    color: #b3b0af; }
+  /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.chardonnay .item--wine__background svg {
+    fill: #b3b0af; }
+  /* line 124, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.syrah .item--wine__content .item--wine__text .item--wine__logo svg {
+    fill: #a37fbf; }
+  /* line 130, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.syrah .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title a {
+    color: #a37fbf; }
+  /* line 138, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine.syrah .item--wine__background svg {
+    fill: #a37fbf; }
+  /* line 144, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine .item--wine__background {
+    position: absolute;
+    height: 130px;
+    width: 34%;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -40%);
+    opacity: .1; }
+  /* line 153, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .item--wine .item--wine__content {
+    z-index: 100;
+    position: relative;
+    /*.item--wine__text*/
+    /*.item--wine__image*/ }
+    /* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine .item--wine__content .item--wine__text {
+      float: right;
+      width: 70%;
+      position: relative;
+      height: 260px;
+      /*.item--wine__logo*/
+      /*.item-wine__content-text*/ }
+      @media (min-width: 740px) {
+        /* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .item--wine .item--wine__content .item--wine__text {
+          padding-top: 30px; } }
+      /* line 164, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+      .item--wine .item--wine__content .item--wine__text .item--wine__logo {
+        height: 51px;
+        width: 30px; }
+      /* line 168, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+      .item--wine .item--wine__content .item--wine__text .item-wine__content-text {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        padding: 0 25px;
+        clear: both;
+        /*.item-wine__title*/
+        /*.item-wine__more*/ }
+        @media (min-width: 740px) {
+          /* line 168, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+          .item--wine .item--wine__content .item--wine__text .item-wine__content-text {
+            padding: 0;
+            margin-top: 10px;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: translate(0, 0); } }
+        /* line 183, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title {
+          line-height: 21.6px;
+          line-height: 1.35rem;
+          font-size: 18px;
+          font-size: 1.125rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          max-width: 150px; }
+          @media (min-width: 740px) {
+            /* line 183, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+            .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title {
+              line-height: 36px;
+              line-height: 2.25rem;
+              font-size: 30px;
+              font-size: 1.875rem; } }
+          @media (min-width: 1180px) {
+            /* line 183, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+            .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title {
+              line-height: 40px;
+              line-height: 2.5rem;
+              font-size: 40px;
+              font-size: 2.5rem; } }
+        /* line 195, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__more {
+          font-family: woolen;
+          line-height: 36px;
+          line-height: 2.25rem;
+          font-size: 30px;
+          font-size: 1.875rem;
+          color: #000; }
+          @media (min-width: 1180px) {
+            /* line 195, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+            .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__more {
+              opacity: 0;
+              transition: all 300ms; } }
+    /* line 206, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .item--wine .item--wine__content .item--wine__image {
+      float: right;
+      width: 30%; }
+
+/*.item--wine*/
+/* line 212, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.wine--page {
+  margin-bottom: 40px; }
+  @media (min-width: 740px) {
+    /* line 212, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--page {
+      margin: 50px 0 30px 0; } }
+  @media (min-width: 740px) {
+    /* line 217, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--page .item--wine {
+      height: 520px; } }
+  /* line 221, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .wine--page .item--wine .item--wine__background {
+    height: 180px;
+    width: 46%;
+    left: 10px;
+    transform: translate(0, -46%); }
+    @media (min-width: 740px) {
+      /* line 221, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+      .wine--page .item--wine .item--wine__background {
+        height: 240px;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -70%); } }
+  /* line 233, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .wine--page .item--wine .item--wine__content {
+    width: 100%;
+    float: right; }
+    /* line 236, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--page .item--wine .item--wine__content .item--wine__text {
+      width: 60%; }
+      @media (min-width: 740px) {
+        /* line 236, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .wine--page .item--wine .item--wine__content .item--wine__text {
+          width: 100%;
+          display: block;
+          float: none;
+          padding: 0;
+          text-align: center; } }
+      @media (min-width: 740px) {
+        /* line 245, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .wine--page .item--wine .item--wine__content .item--wine__text .item--wine__logo {
+          display: none; } }
+      @media (min-width: 740px) {
+        /* line 250, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .wine--page .item--wine .item--wine__content .item--wine__text .item-wine__title {
+          max-width: 100%; } }
+    /* line 256, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--page .item--wine .item--wine__content .item--wine__image {
+      width: 40%;
+      float: left; }
+      @media (min-width: 740px) {
+        /* line 256, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .wine--page .item--wine .item--wine__content .item--wine__image {
+          width: 100%;
+          display: block;
+          float: none;
+          height: 400px; }
+          /* line 264, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+          .wine--page .item--wine .item--wine__content .item--wine__image img, .wine--page .item--wine .item--wine__content .item--wine__image a {
+            width: auto;
+            height: 100%;
+            margin: auto;
+            display: block; } }
+
+/*.wine--page*/
+/* line 278, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.related .wine--page .item--wine .item--wine__background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+/* line 282, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.related .wine--page .item--wine .item--wine__content .item--wine__image {
+  float: none;
+  margin: auto; }
+
+/* line 286, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.related .wine--page .item--wine .item--wine__content .item--wine__text {
+  height: auto;
+  width: 100%;
+  text-align: center; }
+  /* line 290, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .related .wine--page .item--wine .item--wine__content .item--wine__text .item-wine__content-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0); }
+    /* line 295, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .related .wine--page .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title {
+      max-width: 100%; }
+      @media (min-width: 1180px) {
+        /* line 295, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+        .related .wine--page .item--wine .item--wine__content .item--wine__text .item-wine__content-text .item-wine__title {
+          line-height: 30px;
+          line-height: 1.875rem;
+          font-size: 30px;
+          font-size: 1.875rem; } }
+
+@media (min-width: 1180px) {
+  /* line 308, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+  .wine--single .item--wine {
+    height: 520px; } }
+
+/* line 313, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.wine--single .item--wine__background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 50%; }
+  @media (min-width: 740px) {
+    /* line 313, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--single .item--wine__background {
+      width: 100%;
+      height: 300px; } }
+
+/* line 323, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+.wine--single .item--wine__content .item--wine__image {
+  margin: auto;
+  float: none; }
+  @media (min-width: 740px) {
+    /* line 323, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--single .item--wine__content .item--wine__image {
+      width: 50%; } }
+  @media (min-width: 1180px) {
+    /* line 323, C:/wamp/www/ritual/maquetacion/scss/objects/_wine.scss */
+    .wine--single .item--wine__content .item--wine__image {
+      width: 35%; } }
+
+/*.wine--single*/
+/*------------------------------------*$SOCIAL ITEM
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+.full-box--instagram {
+  background: #d6b990;
+  padding: 20px 10px 10px; }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .full-box--instagram {
+      background-color: transparent;
+      padding: 0;
+      position: relative;
+      z-index: 100; } }
+
+/*.full-box--instagram*/
+/* line 14, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+.item--instagram {
+  position: relative;
+  /*.item--instagram__title*/
+  /*.item--instagram__button*/
+  /*.item--instagram__text*/ }
+  @media (min-width: 740px) {
+    /* line 14, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--instagram {
+      width: 40%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 2px 2px 2px 20px; } }
+  @media (min-width: 1180px) {
+    /* line 14, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--instagram {
+      width: 330px;
+      right: auto;
+      left: 540px;
+      padding: 0;
+      z-index: 300; } }
+  /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--instagram .item--instagram__title {
+    line-height: 30px;
+    line-height: 1.875rem;
+    font-size: 25px;
+    font-size: 1.5625rem;
+    font-weight: 700;
+    color: white;
+    float: left;
+    margin-bottom: 20px; }
+    @media (min-width: 1180px) {
+      /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--instagram .item--instagram__title {
+        line-height: 35px;
+        line-height: 2.1875rem;
+        font-size: 20px;
+        font-size: 1.25rem; } }
+  /* line 40, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--instagram .item--instagram__button {
+    width: 110px;
+    float: right;
+    color: white;
+    margin-top: -5px;
+    text-align: center; }
+    @media (min-width: 1180px) {
+      /* line 40, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--instagram .item--instagram__button {
+        margin-right: 20px; } }
+    /* line 49, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--instagram .item--instagram__button svg {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 6px 0 0 6px; }
+  /* line 57, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--instagram .item--instagram__text {
+    font-weight: 600; }
+    @media (min-width: 740px) {
+      /* line 57, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--instagram .item--instagram__text {
+        color: white;
+        clear: both; } }
+
+/*.item--instagram*/
+/* line 65, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+.images--instagram {
+  position: relative;
+  /*.images--instagram__item*/ }
+  /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .images--instagram .images--instagram__item {
+    display: none;
+    float: left;
+    position: relative;
+    /*.images--instagram__content*/ }
+    @media (min-width: 740px) {
+      /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item {
+        width: 33.33333%;
+        display: block;
+        padding: 2px; } }
+    @media (min-width: 1180px) {
+      /* line 78, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:hover .images--instagram__content {
+        opacity: 1; } }
+    /* line 83, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .images--instagram .images--instagram__item:first-child {
+      display: block; }
+      @media (min-width: 740px) {
+        /* line 83, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .images--instagram .images--instagram__item:first-child {
+          width: 60%; } }
+      @media (min-width: 1180px) {
+        /* line 83, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .images--instagram .images--instagram__item:first-child {
+          width: 460px;
+          margin-left: 46px; } }
+    @media (min-width: 740px) {
+      /* line 93, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(2) {
+        width: 40%;
+        vertical-align: bottom; } }
+    @media (min-width: 740px) {
+      /* line 99, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(3) {
+        clear: left; } }
+    @media (min-width: 1180px) {
+      /* line 99, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(3) {
+        clear: none; } }
+    @media (min-width: 1180px) {
+      /* line 107, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(2), .images--instagram .images--instagram__item:nth-child(3) {
+        width: 310px;
+        margin-top: 150px; } }
+    @media (min-width: 1180px) {
+      /* line 113, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(4) {
+        clear: left;
+        padding-left: 0;
+        padding-bottom: 4px; } }
+    /* line 120, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .images--instagram .images--instagram__item:nth-child(6), .images--instagram .images--instagram__item:nth-child(7), .images--instagram .images--instagram__item:nth-child(8) {
+      display: none; }
+      @media (min-width: 1180px) {
+        /* line 120, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .images--instagram .images--instagram__item:nth-child(6), .images--instagram .images--instagram__item:nth-child(7), .images--instagram .images--instagram__item:nth-child(8) {
+          display: block; } }
+    @media (min-width: 1180px) {
+      /* line 126, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(4), .images--instagram .images--instagram__item:nth-child(5), .images--instagram .images--instagram__item:nth-child(6), .images--instagram .images--instagram__item:nth-child(7), .images--instagram .images--instagram__item:nth-child(8) {
+        width: 236px;
+        height: 234px;
+        overflow: hidden; } }
+    @media (min-width: 1180px) {
+      /* line 133, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item:nth-child(8) {
+        padding-right: 0;
+        padding-bottom: 4px; } }
+    /* line 139, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .images--instagram .images--instagram__item .images--instagram__item__content {
+      position: relative; }
+    /* line 142, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .images--instagram .images--instagram__item .images--instagram__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      /*.images--instagram__content--block*/ }
+      @media (min-width: 1180px) {
+        /* line 142, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .images--instagram .images--instagram__item .images--instagram__content {
+          display: block;
+          opacity: 0;
+          transition: all 300ms; } }
+      /* line 155, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item .images--instagram__content svg {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        fill: white;
+        vertical-align: top;
+        margin: 2px 0 0 5px; }
+      /* line 163, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item .images--instagram__content span {
+        display: inline-block;
+        color: white; }
+      /* line 167, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .images--instagram .images--instagram__item .images--instagram__content .images--instagram__content--block {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-flow: row wrap;
+        /*.images--instagram__like*/
+        /*.images--instagram__message*/ }
+        /* line 171, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .images--instagram .images--instagram__item .images--instagram__content .images--instagram__content--block .images--instagram__like {
+          margin-right: 20px; }
+
+/*.images--instagram*/
+/* line 181, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+.item--twitter {
+  position: relative;
+  margin-top: 4px;
+  /*.item--twitter__image*/
+  /*.item--twitter__content*/ }
+  @media (min-width: 740px) {
+    /* line 181, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter {
+      width: 50%;
+      padding: 2px;
+      float: left;
+      margin: 0;
+      height: 242px;
+      overflow: hidden;
+      position: relative;
+      z-index: 100; } }
+  @media (min-width: 1180px) {
+    /* line 181, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter {
+      height: 396px;
+      padding-left: 0; } }
+  /* line 198, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--twitter::after {
+    content: '';
+    width: 100%;
+    height: 175px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
+    @media (min-width: 740px) {
+      /* line 198, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter::after {
+        width: calc(100% - 4px);
+        top: 2px;
+        left: 2px; } }
+  /* line 214, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--twitter .item--twitter__image {
+    background: #0082ff; }
+    @media (min-width: 740px) {
+      /* line 214, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__image {
+        height: 100%;
+        overflow: hidden; } }
+    /* line 220, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__image img {
+      opacity: .5; }
+  /* line 224, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--twitter .item--twitter__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    height: 100%;
+    padding: 20px 10px 10px;
+    width: 100%;
+    /*.item--twitter__button*/
+    /*.item--twitter__image*/
+    /*.item--twitter__name*/
+    /*.item--twitter__channel*/
+    /*.item--twitter__text*/
+    /*.item--twitter__buttons*/ }
+    @media (min-width: 740px) {
+      /* line 224, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content {
+        text-align: center; } }
+    /* line 235, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__content .item--twitter__button {
+      width: 110px;
+      text-align: center;
+      color: white;
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 16px; }
+      @media (min-width: 740px) {
+        /* line 235, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--twitter .item--twitter__content .item--twitter__button {
+          position: relative;
+          right: auto;
+          top: auto;
+          margin-bottom: 20px; } }
+      /* line 249, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content .item--twitter__button span {
+        display: inline-block; }
+      /* line 252, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content .item--twitter__button svg {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 6px 0 0 6px; }
+    /* line 260, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__content .item--twitter__image--profile {
+      display: none; }
+      @media (min-width: 1180px) {
+        /* line 260, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--twitter .item--twitter__content .item--twitter__image--profile {
+          display: block;
+          width: 72px;
+          height: 72px;
+          margin: auto;
+          border-radius: 36px;
+          overflow: hidden; } }
+    /* line 271, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__content .item--twitter__name {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 25px;
+      font-size: 1.5625rem;
+      color: white; }
+      @media (min-width: 740px) {
+        /* line 271, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--twitter .item--twitter__content .item--twitter__name {
+          display: inline-block; } }
+    /* line 278, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__content .item--twitter__channel {
+      line-height: 24px;
+      line-height: 1.5rem;
+      font-size: 20px;
+      font-size: 1.25rem;
+      color: white;
+      margin: -8px 0 20px 0;
+      display: block; }
+      @media (min-width: 740px) {
+        /* line 278, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--twitter .item--twitter__content .item--twitter__channel {
+          display: inline-block;
+          margin-bottom: 0; } }
+    @media (min-width: 740px) {
+      /* line 288, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content .item--twitter__text {
+        padding: 0 30px;
+        max-width: 370px;
+        margin: auto; } }
+    /* line 294, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__content .item--twitter__text p, .item--twitter .item--twitter__content .item--twitter__text a {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 20px;
+      font-size: 1.25rem;
+      color: white; }
+      @media (min-width: 740px) {
+        /* line 294, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--twitter .item--twitter__content .item--twitter__text p, .item--twitter .item--twitter__content .item--twitter__text a {
+          line-height: 24px;
+          line-height: 1.5rem;
+          font-size: 16px;
+          font-size: 1rem; } }
+    /* line 302, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--twitter .item--twitter__content .item--twitter__buttons {
+      display: flex;
+      flex-flow: row wrap;
+      position: absolute;
+      bottom: 30px;
+      left: 10px;
+      text-align: center;
+      /*.item--twitter__retweet*/
+      /*.item--twitter__fav*/ }
+      @media (min-width: 740px) {
+        /* line 302, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--twitter .item--twitter__content .item--twitter__buttons {
+          left: 50%;
+          bottom: 20px;
+          transform: translate(-50%, 0); } }
+      /* line 314, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content .item--twitter__buttons svg {
+        height: 16px;
+        display: inline-block;
+        max-width: 25px;
+        vertical-align: top;
+        margin-top: 3px; }
+      /* line 321, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content .item--twitter__buttons a {
+        color: white;
+        display: inline-block;
+        margin-left: 5px; }
+      /* line 326, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--twitter .item--twitter__content .item--twitter__buttons .item--twitter__retweet {
+        margin-right: 30px; }
+
+/*.item--twitter*/
+/* line 335, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+.item--facebook {
+  position: relative;
+  margin-top: 4px;
+  /*.item--facebook__image*/
+  /*.item--facebook__content*/ }
+  @media (min-width: 740px) {
+    /* line 335, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--facebook {
+      width: 50%;
+      padding: 2px;
+      float: left;
+      margin: 0;
+      height: 242px;
+      overflow: hidden;
+      position: relative;
+      z-index: 100; } }
+  @media (min-width: 1180px) {
+    /* line 335, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--facebook {
+      height: 396px;
+      padding-right: 0; } }
+  /* line 352, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--facebook::after {
+    content: '';
+    width: 100%;
+    height: 175px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
+    @media (min-width: 740px) {
+      /* line 352, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--facebook::after {
+        width: calc(100% - 4px);
+        top: 2px;
+        left: 2px;
+        height: 100%; } }
+  @media (min-width: 740px) {
+    /* line 369, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--facebook .item--facebook__image {
+      height: 100%; }
+      /* line 372, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--facebook .item--facebook__image img {
+        height: 100%; } }
+  /* line 377, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+  .item--facebook .item--facebook__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    padding: 20px 10px 10px 10px;
+    /*.item--facebook__button*/
+    /*.item--facebook__text*/ }
+    @media (min-width: 740px) {
+      /* line 377, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--facebook .item--facebook__content {
+        padding: 20px; } }
+    /* line 388, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--facebook .item--facebook__content .item--facebook__button {
+      width: 110px;
+      text-align: center;
+      color: white;
+      display: block;
+      float: right;
+      margin-top: -4px; }
+      @media (min-width: 740px) {
+        /* line 388, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--facebook .item--facebook__content .item--facebook__button {
+          float: left; } }
+      /* line 398, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--facebook .item--facebook__content .item--facebook__button span {
+        display: inline-block; }
+      /* line 401, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--facebook .item--facebook__content .item--facebook__button svg {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 6px 0 0 6px; }
+    /* line 409, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+    .item--facebook .item--facebook__content .item--facebook__text {
+      font-family: woolen;
+      display: block;
+      color: white;
+      padding: 20px 10px;
+      clear: both; }
+      @media (min-width: 740px) {
+        /* line 409, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+        .item--facebook .item--facebook__content .item--facebook__text {
+          padding-top: 40px; } }
+      /* line 418, C:/wamp/www/ritual/maquetacion/scss/objects/_social-item.scss */
+      .item--facebook .item--facebook__content .item--facebook__text p {
+        line-height: 35px;
+        line-height: 2.1875rem;
+        font-size: 35px;
+        font-size: 2.1875rem;
+        text-align: center; }
+
+/*.item--facebook*/
+/*------------------------------------*$FOOTER
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 0 10px;
+  /*.logo-foo*/
+  /*.menu-foo*/
+  /*.varieties-foo*/ }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+    .footer {
+      padding: 0 24px;
+      overflow: hidden; } }
+  /* line 14, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+  .footer .logo-foo {
+    width: 100%;
+    height: 37px;
+    margin: auto;
+    position: relative;
+    margin-bottom: -6px; }
+    @media (min-width: 740px) {
+      /* line 14, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+      .footer .logo-foo {
+        position: absolute;
+        left: 50%;
+        bottom: 25px;
+        transform: translate(-50%, 0);
+        width: 53px;
+        height: 46px; } }
+    /* line 28, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+    .footer .logo-foo::after, .footer .logo-foo::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 6px;
+      height: 1px;
+      width: calc(50% - 32px);
+      background: rgba(255, 255, 255, 0.5); }
+    /* line 37, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+    .footer .logo-foo::before {
+      left: auto;
+      right: 0; }
+  /* line 42, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+  .footer .menu-foo {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    height: 34px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+    @media (min-width: 740px) {
+      /* line 42, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+      .footer .menu-foo {
+        width: calc(50% - 30px);
+        float: right;
+        height: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: none; } }
+    @media (min-width: 1180px) {
+      /* line 42, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+      .footer .menu-foo {
+        padding-right: 170px; } }
+    /* line 58, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+    .footer .menu-foo a {
+      color: white;
+      line-height: 34px;
+      line-height: 2.125rem;
+      font-size: 12px;
+      font-size: 0.75rem;
+      font-weight: 600; }
+      @media (min-width: 740px) {
+        /* line 58, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+        .footer .menu-foo a {
+          line-height: 60px;
+          line-height: 3.75rem;
+          font-size: 16px;
+          font-size: 1rem; } }
+  /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+  .footer .varieties-foo {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    height: 43px; }
+    @media (min-width: 740px) {
+      /* line 67, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+      .footer .varieties-foo {
+        width: calc(50% - 30px);
+        float: left;
+        height: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5); } }
+    /* line 78, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+    .footer .varieties-foo a {
+      height: 43px;
+      padding: 0 8px 0 0; }
+      /* line 81, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+      .footer .varieties-foo a:last-child {
+        padding: 0; }
+      @media (min-width: 740px) {
+        /* line 78, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+        .footer .varieties-foo a {
+          margin-top: 24px;
+          height: 11px;
+          line-height: 3.75rem; }
+          /* line 88, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+          .footer .varieties-foo a:nth-child(3) {
+            height: 20px; }
+          /* line 91, C:/wamp/www/ritual/maquetacion/scss/objects/_footer.scss */
+          .footer .varieties-foo a svg {
+            vertical-align: top; } }
+
+/*.footer*/
+/*------------------------------------*$PRE-FOO
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+.pre-foo {
+  position: relative;
+  z-index: -1;
+  /*.pre-foo__content*/ }
+  /* line 7, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+  .pre-foo::after {
+    content: '';
+    width: 100%;
+    height: 160px;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
+  /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+  .pre-foo.pre-foo--home {
+    margin-top: -60px; }
+    @media (min-width: 740px) {
+      /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+      .pre-foo.pre-foo--home {
+        margin-top: -24%; } }
+  @media (min-width: 740px) {
+    /* line 25, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+    .pre-foo.pre-foo--wines {
+      margin-top: -38%; } }
+  @media (min-width: 740px) {
+    /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+    .pre-foo.pre-foo--estate {
+      margin-top: -10%; } }
+  @media (min-width: 740px) {
+    /* line 35, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+    .pre-foo.pre-foo--trade {
+      margin-top: -45%; } }
+  @media (min-width: 740px) {
+    /* line 40, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+    .pre-foo.pre-foo--gather {
+      margin-top: -10%; } }
+  /* line 45, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+  .pre-foo .pre-foo__content {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    padding: 0 15px;
+    /*.item--moon*/ }
+    @media (max-width: 740px) {
+      /* line 45, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+      .pre-foo .pre-foo__content {
+        display: none; } }
+    /* line 58, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+    .pre-foo .pre-foo__content .item--moon {
+      color: #948f84;
+      text-align: center; }
+      /* line 61, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+      .pre-foo .pre-foo__content .item--moon p {
+        margin-top: 10px;
+        line-height: 1rem; }
+      /* line 65, C:/wamp/www/ritual/maquetacion/scss/objects/_pre-foo.scss */
+      .pre-foo .pre-foo__content .item--moon svg {
+        max-height: 36px;
+        max-width: 36px;
+        margin: auto;
+        fill: #948f84;
+        display: block; }
+
+/*.pre-foo*/
+/*------------------------------------*$SINGLE VINO
+\*------------------------------------*/
+/* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .content__single .content__title svg {
+  fill: #965550; }
+
+/* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .description .item__description .logo__description svg {
+  fill: #965550; }
+
+/* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .description .item__description .text__description {
+  color: #965550; }
+
+/* line 26, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .information {
+  background: #965550; }
+  /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.pinot .information .top-bar .style-select select {
+    background: #75423e;
+    color: rgba(193, 143, 139, 0.7); }
+  /* line 36, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.pinot .information .information__banner {
+    background: #965550;
+    background: linear-gradient(to right, #050505 0%, #965550 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='#e73827', GradientType=1 ); }
+
+/* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .awards .award__icon svg {
+  fill: #965550; }
+
+/* line 48, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .awards .award__button {
+  border: 1px solid #965550; }
+  /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.pinot .awards .award__button .btn__border--color {
+    background: #965550;
+    color: white; }
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.pinot .awards .award__button .btn__border {
+    color: #965550; }
+
+/* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .related .flex-direction-nav .flex-nav-prev .flex-prev svg, .vino-color.pinot .description .flex-direction-nav .flex-nav-prev .flex-prev svg {
+  stroke: #965550; }
+
+/* line 70, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.pinot .related .flex-direction-nav .flex-nav-next .flex-next svg, .vino-color.pinot .description .flex-direction-nav .flex-nav-next .flex-next svg {
+  stroke: #965550; }
+
+/* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .content__single .content__title svg {
+  fill: #4b7355; }
+
+/* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .description .item__description .logo__description svg {
+  fill: #4b7355; }
+
+/* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .description .item__description .text__description {
+  color: #4b7355; }
+
+/* line 26, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .information {
+  background: #4b7355; }
+  /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.sauvignon .information .top-bar .style-select select {
+    background: #37543e;
+    color: rgba(123, 169, 135, 0.7); }
+  /* line 36, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.sauvignon .information .information__banner {
+    background: #4b7355;
+    background: linear-gradient(to right, #050505 0%, #4b7355 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='#e73827', GradientType=1 ); }
+
+/* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .awards .award__icon svg {
+  fill: #4b7355; }
+
+/* line 48, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .awards .award__button {
+  border: 1px solid #4b7355; }
+  /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.sauvignon .awards .award__button .btn__border--color {
+    background: #4b7355;
+    color: white; }
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.sauvignon .awards .award__button .btn__border {
+    color: #4b7355; }
+
+/* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .related .flex-direction-nav .flex-nav-prev .flex-prev svg, .vino-color.sauvignon .description .flex-direction-nav .flex-nav-prev .flex-prev svg {
+  stroke: #4b7355; }
+
+/* line 70, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.sauvignon .related .flex-direction-nav .flex-nav-next .flex-next svg, .vino-color.sauvignon .description .flex-direction-nav .flex-nav-next .flex-next svg {
+  stroke: #4b7355; }
+
+/* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .content__single .content__title svg {
+  fill: #bd9db1; }
+
+/* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .description .item__description .logo__description svg {
+  fill: #bd9db1; }
+
+/* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .description .item__description .text__description {
+  color: #bd9db1; }
+
+/* line 26, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .information {
+  background: #bd9db1; }
+  /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.rose .information .top-bar .style-select select {
+    background: #a87f99;
+    color: rgba(230, 218, 226, 0.7); }
+  /* line 36, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.rose .information .information__banner {
+    background: #bd9db1;
+    background: linear-gradient(to right, #050505 0%, #bd9db1 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='#e73827', GradientType=1 ); }
+
+/* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .awards .award__icon svg {
+  fill: #bd9db1; }
+
+/* line 48, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .awards .award__button {
+  border: 1px solid #bd9db1; }
+  /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.rose .awards .award__button .btn__border--color {
+    background: #bd9db1;
+    color: white; }
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.rose .awards .award__button .btn__border {
+    color: #bd9db1; }
+
+/* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .related .flex-direction-nav .flex-nav-prev .flex-prev svg, .vino-color.rose .description .flex-direction-nav .flex-nav-prev .flex-prev svg {
+  stroke: #bd9db1; }
+
+/* line 70, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.rose .related .flex-direction-nav .flex-nav-next .flex-next svg, .vino-color.rose .description .flex-direction-nav .flex-nav-next .flex-next svg {
+  stroke: #bd9db1; }
+
+/* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .content__single .content__title svg {
+  fill: #b3b0af; }
+
+/* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .description .item__description .logo__description svg {
+  fill: #b3b0af; }
+
+/* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .description .item__description .text__description {
+  color: #b3b0af; }
+
+/* line 26, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .information {
+  background: #b3b0af; }
+  /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.chardonnay .information .top-bar .style-select select {
+    background: #9a9695;
+    color: rgba(229, 228, 227, 0.7); }
+  /* line 36, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.chardonnay .information .information__banner {
+    background: #b3b0af;
+    background: linear-gradient(to right, #050505 0%, #b3b0af 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='#e73827', GradientType=1 ); }
+
+/* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .awards .award__icon svg {
+  fill: #b3b0af; }
+
+/* line 48, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .awards .award__button {
+  border: 1px solid #b3b0af; }
+  /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.chardonnay .awards .award__button .btn__border--color {
+    background: #b3b0af;
+    color: white; }
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.chardonnay .awards .award__button .btn__border {
+    color: #b3b0af; }
+
+/* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .related .flex-direction-nav .flex-nav-prev .flex-prev svg, .vino-color.chardonnay .description .flex-direction-nav .flex-nav-prev .flex-prev svg {
+  stroke: #b3b0af; }
+
+/* line 70, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.chardonnay .related .flex-direction-nav .flex-nav-next .flex-next svg, .vino-color.chardonnay .description .flex-direction-nav .flex-nav-next .flex-next svg {
+  stroke: #b3b0af; }
+
+/* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .content__single .content__title svg {
+  fill: #a37fbf; }
+
+/* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .description .item__description .logo__description svg {
+  fill: #a37fbf; }
+
+/* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .description .item__description .text__description {
+  color: #a37fbf; }
+
+/* line 26, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .information {
+  background: #a37fbf; }
+  /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.syrah .information .top-bar .style-select select {
+    background: #8b5dae;
+    color: rgba(212, 195, 225, 0.7); }
+  /* line 36, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.syrah .information .information__banner {
+    background: #a37fbf;
+    background: linear-gradient(to right, #050505 0%, #a37fbf 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='#e73827', GradientType=1 ); }
+
+/* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .awards .award__icon svg {
+  fill: #a37fbf; }
+
+/* line 48, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .awards .award__button {
+  border: 1px solid #a37fbf; }
+  /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.syrah .awards .award__button .btn__border--color {
+    background: #a37fbf;
+    color: white; }
+  /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .vino-color.syrah .awards .award__button .btn__border {
+    color: #a37fbf; }
+
+/* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .related .flex-direction-nav .flex-nav-prev .flex-prev svg, .vino-color.syrah .description .flex-direction-nav .flex-nav-prev .flex-prev svg {
+  stroke: #a37fbf; }
+
+/* line 70, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.vino-color.syrah .related .flex-direction-nav .flex-nav-next .flex-next svg, .vino-color.syrah .description .flex-direction-nav .flex-nav-next .flex-next svg {
+  stroke: #a37fbf; }
+
+/* line 80, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.content__single {
+  padding: 0 15px;
+  margin-bottom: 50px; }
+  @media (min-width: 740px) {
+    /* line 80, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .content__single {
+      padding: 40px 25px; } }
+  @media (min-width: 740px) {
+    /* line 86, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .content__single .first-box {
+      padding: 15px 0 0 15px;
+      float: right; } }
+  @media (min-width: 740px) {
+    /* line 91, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .content__single .first-box .content__bajada {
+      width: 100%; } }
+  @media (min-width: 740px) {
+    /* line 97, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .content__single .faldeo {
+      float: right;
+      width: 60%; }
+      /* line 101, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .content__single .faldeo img {
+        margin-top: -50px; } }
+  @media (min-width: 740px) {
+    /* line 106, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .content__single .wine--single, .content__single .content__bajada {
+      float: left; } }
+  @media (min-width: 740px) {
+    /* line 111, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .content__single .content__bajada {
+      width: 40%; } }
+  /* line 117, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .content__single .content__title svg {
+    width: 74px;
+    height: 12px; }
+  /* line 121, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .content__single .content__title h2 {
+    text-transform: uppercase;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 20px;
+    font-size: 1.25rem; }
+    @media (min-width: 740px) {
+      /* line 121, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .content__single .content__title h2 {
+        margin-bottom: 35px; } }
+    @media (min-width: 1180px) {
+      /* line 121, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .content__single .content__title h2 {
+        line-height: 45.6px;
+        line-height: 2.85rem;
+        font-size: 38px;
+        font-size: 2.375rem;
+        margin-top: 15px; } }
+  /* line 134, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .content__single .content__bajada p {
+    line-height: 30px;
+    line-height: 1.875rem;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px; }
+    @media (min-width: 1180px) {
+      /* line 134, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .content__single .content__bajada p {
+        line-height: 30px;
+        line-height: 1.875rem;
+        font-size: 18px;
+        font-size: 1.125rem; } }
+  /* line 143, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .content__single content__image {
+    margin-bottom: 20px; }
+
+@media (min-width: 740px) {
+  /* line 148, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .description .slides {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-bottom: 30px; } }
+
+/* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.description .item__description {
+  width: 100%; }
+  @media (min-width: 740px) {
+    /* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .description .item__description {
+      width: 33.33333%;
+      margin-bottom: 30px; } }
+  @media (min-width: 1180px) {
+    /* line 156, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .description .item__description {
+      width: 20%; } }
+  /* line 165, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .description .item__description .logo__description {
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    margin-bottom: 20px; }
+  /* line 171, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .description .item__description .text__description {
+    width: 80%;
+    margin: auto;
+    text-align: center; }
+
+/* line 179, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.information .top-bar {
+  padding: 15px 10px; }
+  /* line 181, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .information .top-bar .top-bar__title {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px; }
+    @media (min-width: 740px) {
+      /* line 181, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .top-bar .top-bar__title {
+        width: 33.33333%;
+        display: inline-block;
+        line-height: 1.875rem;
+        margin-bottom: 0; } }
+    @media (min-width: 1180px) {
+      /* line 181, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .top-bar .top-bar__title {
+        width: 250px; } }
+  /* line 197, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .information .top-bar .style-select {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; }
+    @media (min-width: 740px) {
+      /* line 197, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .top-bar .style-select {
+        width: 33.33333%;
+        display: inline-block;
+        vertical-align: bottom; } }
+    @media (min-width: 1180px) {
+      /* line 197, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .top-bar .style-select {
+        width: 250px; } }
+    /* line 209, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .top-bar .style-select::after {
+      content: '';
+      width: 1px;
+      height: 70%;
+      background: white;
+      position: absolute;
+      right: 30px;
+      top: 15%;
+      z-index: 200; }
+    /* line 219, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .top-bar .style-select svg {
+      fill: white;
+      position: absolute;
+      right: 12px;
+      top: 13px;
+      width: 10px;
+      height: 8px;
+      z-index: 200; }
+    /* line 228, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .top-bar .style-select select {
+      width: 100%;
+      outline: none;
+      display: inline-block;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 100;
+      background-color: transparent;
+      border: none;
+      height: 30px;
+      padding: 0 15px; }
+  /* line 244, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .information .top-bar .btn {
+    width: 100px;
+    float: right;
+    text-align: center;
+    color: white;
+    height: 28px;
+    line-height: 1.625rem;
+    margin-top: 10px; }
+    @media (min-width: 740px) {
+      /* line 244, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .top-bar .btn {
+        display: inline-block;
+        float: none;
+        margin-left: 15px; } }
+
+/* line 259, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.information .information__banner {
+  height: 160px;
+  position: relative; }
+  @media (min-width: 740px) {
+    /* line 259, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .information__banner {
+      height: 330px; } }
+  /* line 265, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .information .information__banner .information__banner__image {
+    opacity: .3;
+    height: 100%; }
+    /* line 268, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .information__banner .information__banner__image img {
+      height: 100%; }
+  /* line 272, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .information .information__banner .information__banner__content {
+    width: 100%;
+    z-index: 200;
+    padding: 10px 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    /* line 277, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .information__banner .information__banner__content .information__banner__icon {
+      width: 23px;
+      height: 34px;
+      margin: auto;
+      margin-bottom: 10px; }
+      @media (min-width: 740px) {
+        /* line 277, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+        .information .information__banner .information__banner__content .information__banner__icon {
+          width: 32px;
+          height: 47px;
+          margin-bottom: 30px; } }
+      /* line 287, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .information__banner .information__banner__content .information__banner__icon svg {
+        fill: white; }
+    /* line 291, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .information .information__banner .information__banner__content .information__banner__text {
+      text-align: center; }
+      @media (min-width: 1180px) {
+        /* line 291, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+        .information .information__banner .information__banner__content .information__banner__text {
+          max-width: 660px;
+          margin: auto; } }
+      /* line 297, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .information .information__banner .information__banner__content .information__banner__text p {
+        line-height: 28.8px;
+        line-height: 1.8rem;
+        font-size: 24px;
+        font-size: 1.5rem;
+        color: white;
+        font-family: woolen; }
+        @media (min-width: 740px) {
+          /* line 297, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+          .information .information__banner .information__banner__content .information__banner__text p {
+            line-height: 40px;
+            line-height: 2.5rem;
+            font-size: 40px;
+            font-size: 2.5rem; } }
+        @media (min-width: 1180px) {
+          /* line 297, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+          .information .information__banner .information__banner__content .information__banner__text p {
+            line-height: 48px;
+            line-height: 3rem;
+            font-size: 40px;
+            font-size: 2.5rem; } }
+
+/* line 312, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.single-share {
+  display: none;
+  float: right;
+  padding-top: 7px;
+  margin-right: 20px; }
+  @media (min-width: 1180px) {
+    /* line 312, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .single-share {
+      display: inline-block; } }
+  /* line 320, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .single-share p {
+    color: white;
+    display: inline-block;
+    line-height: 1.875rem;
+    font-weight: 600;
+    margin-right: 5px; }
+  /* line 327, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .single-share a {
+    width: 16px;
+    height: 16px;
+    margin: 0 15px;
+    display: inline-block;
+    line-height: 1.875rem; }
+
+/* line 335, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.awards {
+  padding: 40px 15px; }
+  /* line 337, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .awards .award__title {
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-bottom: 40px; }
+    @media (min-width: 740px) {
+      /* line 337, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__title {
+        line-height: 36px;
+        line-height: 2.25rem;
+        font-size: 30px;
+        font-size: 1.875rem; } }
+  /* line 347, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .awards .award__item {
+    margin-bottom: 20px; }
+    @media (min-width: 740px) {
+      /* line 347, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item {
+        width: 50%;
+        float: left;
+        padding-right: 38px; } }
+    @media (min-width: 1180px) {
+      /* line 347, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item {
+        padding: 0 60px;
+        width: 33.33333%; } }
+    @media (min-width: 740px) {
+      /* line 358, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item:nth-child(3) {
+        padding-right: 0;
+        padding-left: 38px;
+        border-left: 1px solid rgba(0, 0, 0, 0.5); } }
+    @media (min-width: 1180px) {
+      /* line 358, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item:nth-child(3) {
+        padding: 0 60px; } }
+    /* line 368, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .awards .award__item:nth-child(4) {
+      display: none; }
+      @media (min-width: 1180px) {
+        /* line 368, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+        .awards .award__item:nth-child(4) {
+          display: block;
+          padding: 0 60px;
+          border-left: 1px solid rgba(0, 0, 0, 0.5); } }
+    /* line 376, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .awards .award__item .award__icon {
+      width: 29px;
+      height: 44px;
+      margin: 0 auto 15px; }
+    /* line 381, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .awards .award__item .award__text {
+      font-weight: 600;
+      text-align: center; }
+      @media (min-width: 740px) {
+        /* line 381, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+        .awards .award__item .award__text {
+          min-height: 80px; } }
+    /* line 388, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .awards .award__item .award__button {
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 20px; }
+      /* line 393, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item .award__button .btn__border--color, .awards .award__item .award__button .btn__border {
+        height: 33px;
+        display: block;
+        float: left;
+        text-align: center; }
+      /* line 399, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item .award__button .btn__border--color {
+        width: 40%; }
+      /* line 402, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .awards .award__item .award__button .btn__border {
+        width: 60%;
+        border: none; }
+
+/* line 409, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.related, .description {
+  position: relative; }
+  /* line 413, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related .flex-direction-nav .flex-nav-prev .flex-prev, .description .flex-direction-nav .flex-nav-prev .flex-prev {
+    width: 13px;
+    height: 32px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translate(0, -50%); }
+  /* line 423, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related .flex-direction-nav .flex-nav-next .flex-next, .description .flex-direction-nav .flex-nav-next .flex-next {
+    width: 13px;
+    height: 32px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%); }
+
+@media (min-width: 740px) {
+  /* line 434, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related {
+    max-width: 600px;
+    margin: auto; } }
+
+@media (min-width: 1180px) {
+  /* line 434, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related {
+    max-width: 73.75rem; } }
+
+/* line 442, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.related .headline {
+  margin-bottom: 20px; }
+  @media (min-width: 740px) {
+    /* line 444, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .related .headline .headline__title, .related .headline .headline__text {
+      color: #000; } }
+  /* line 450, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related .headline .headline__title::after, .related .headline .headline__title::before {
+    background: rgba(0, 0, 0, 0.5); }
+
+/* line 455, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.related .wine--page {
+  margin-bottom: 10px; }
+  @media (min-width: 1180px) {
+    /* line 455, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .related .wine--page {
+      width: 25%; } }
+  /* line 460, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related .wine--page .item--wine {
+    height: auto; }
+
+/* line 464, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+.related .flex-control-nav {
+  width: 100%;
+  text-align: center; }
+  /* line 467, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+  .related .flex-control-nav li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px; }
+    /* line 472, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+    .related .flex-control-nav li a {
+      color: #af882e;
+      background: #af882e;
+      opacity: .5;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      display: block; }
+      /* line 481, C:/wamp/www/ritual/maquetacion/scss/objects/_single-vino.scss */
+      .related .flex-control-nav li a.flex-active {
+        color: #af882e;
+        background: #af882e;
+        opacity: 1; }
+
+/*------------------------------------*$WINEMAKING
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+.outstanding {
+  color: #af882e;
+  text-align: center;
+  margin-bottom: 60px; }
+  @media (min-width: 1180px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .outstanding {
+      max-width: 680px;
+      margin: auto;
+      margin-bottom: 50px; } }
+  /* line 13, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+  .outstanding p {
+    line-height: 35px;
+    line-height: 2.1875rem;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 600; }
+
+/* line 18, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+.single--winemaking {
+  padding: 0 20px; }
+  @media (min-width: 740px) {
+    /* line 18, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking {
+      padding: 45px 30px 0; } }
+  /* line 24, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+  .single--winemaking .content__page .content__page__image {
+    margin-bottom: 25px; }
+    @media (min-width: 740px) {
+      /* line 24, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__image {
+        width: 50%;
+        float: left; } }
+  @media (min-width: 740px) {
+    /* line 31, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .content__page .content__page__text {
+      width: 50%;
+      padding-left: 25px;
+      float: left; } }
+  /* line 37, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+  .single--winemaking .content__page .content__page__text p {
+    line-height: 30px;
+    line-height: 1.875rem;
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 20px; }
+    /* line 40, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .content__page .content__page__text p:last-child {
+      margin-bottom: 0; }
+  /* line 46, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+  .single--winemaking .content__page .content__page__icons .page__icon {
+    height: 100px;
+    clear: both;
+    margin-bottom: 20px; }
+    @media (min-width: 740px) {
+      /* line 46, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__icons .page__icon {
+        width: 25%;
+        float: left;
+        height: auto;
+        clear: none; } }
+    @media (min-width: 1180px) {
+      /* line 46, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__icons .page__icon {
+        height: 220px; } }
+    /* line 59, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .content__page .content__page__icons .page__icon .page__icon__title {
+      width: 70%;
+      float: right;
+      color: #af882e;
+      position: relative;
+      height: 100%;
+      padding: 0 15px; }
+      @media (min-width: 740px) {
+        /* line 59, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .content__page .content__page__icons .page__icon .page__icon__title {
+          width: 100%;
+          display: block;
+          text-align: right;
+          float: none;
+          height: 90px; } }
+      @media (min-width: 1180px) {
+        /* line 59, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .content__page .content__page__icons .page__icon .page__icon__title {
+          width: 40%;
+          float: left;
+          text-align: right;
+          height: 100%; } }
+      /* line 79, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__icons .page__icon .page__icon__title h2 {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        line-height: 20px;
+        line-height: 1.25rem;
+        font-size: 24px;
+        font-size: 1.5rem;
+        width: 100%;
+        left: 15px;
+        font-family: woolen; }
+        @media (min-width: 740px) {
+          /* line 79, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+          .single--winemaking .content__page .content__page__icons .page__icon .page__icon__title h2 {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: translate(0, 0);
+            line-height: 30px;
+            line-height: 1.875rem;
+            font-size: 34px;
+            font-size: 2.125rem; } }
+        @media (min-width: 1180px) {
+          /* line 79, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+          .single--winemaking .content__page .content__page__icons .page__icon .page__icon__title h2 {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 10px; } }
+    /* line 102, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .content__page .content__page__icons .page__icon .page__icon__image {
+      width: 30%;
+      float: left;
+      height: 100px; }
+      @media (min-width: 740px) {
+        /* line 102, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .content__page .content__page__icons .page__icon .page__icon__image {
+          width: 100%; } }
+      @media (min-width: 1180px) {
+        /* line 102, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .content__page .content__page__icons .page__icon .page__icon__image {
+          height: 220px;
+          width: 60%;
+          float: right; } }
+      /* line 114, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__icons .page__icon .page__icon__image img {
+        height: 100%;
+        width: auto;
+        display: block;
+        margin: auto; }
+    /* line 122, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .content__page .content__page__icons .page__icon:nth-child(2n) .page__icon__title {
+      float: left;
+      text-align: right; }
+      @media (min-width: 740px) {
+        /* line 122, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .content__page .content__page__icons .page__icon:nth-child(2n) .page__icon__title {
+          float: none; } }
+      @media (min-width: 1180px) {
+        /* line 122, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .content__page .content__page__icons .page__icon:nth-child(2n) .page__icon__title {
+          float: left; } }
+      /* line 131, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__icons .page__icon:nth-child(2n) .page__icon__title h2 {
+        left: auto;
+        right: 15px; }
+        @media (min-width: 740px) {
+          /* line 131, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+          .single--winemaking .content__page .content__page__icons .page__icon:nth-child(2n) .page__icon__title h2 {
+            right: auto; } }
+        @media (min-width: 1180px) {
+          /* line 131, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+          .single--winemaking .content__page .content__page__icons .page__icon:nth-child(2n) .page__icon__title h2 {
+            left: auto;
+            right: 10px; } }
+  /* line 146, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+  .single--winemaking .content__page .content__page__bajada {
+    text-align: center; }
+    @media (min-width: 740px) {
+      /* line 146, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__bajada {
+        padding: 0 30px; } }
+    @media (min-width: 1180px) {
+      /* line 146, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .content__page .content__page__bajada {
+        width: 660px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        padding: 0; } }
+    /* line 158, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .content__page .content__page__bajada p {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 18px;
+      font-size: 1.125rem; }
+  /* line 163, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+  .single--winemaking .team {
+    padding-top: 30px; }
+    @media (min-width: 1180px) {
+      /* line 163, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .team {
+        padding-top: 80px; } }
+    /* line 169, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .team .team__item .team__item__image {
+      margin-bottom: 20px; }
+      @media (min-width: 740px) {
+        /* line 169, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .team .team__item .team__item__image {
+          width: 50%;
+          float: left; } }
+    @media (min-width: 740px) {
+      /* line 176, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+      .single--winemaking .team .team__item .team__item__content {
+        width: 50%;
+        float: left;
+        padding-left: 30px; } }
+    /* line 182, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .team .team__item .team__item__content .team__item__title {
+      line-height: 26.4px;
+      line-height: 1.65rem;
+      font-size: 22px;
+      font-size: 1.375rem;
+      text-transform: uppercase; }
+      @media (min-width: 740px) {
+        /* line 182, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .team .team__item .team__item__content .team__item__title {
+          line-height: 36px;
+          line-height: 2.25rem;
+          font-size: 30px;
+          font-size: 1.875rem; } }
+    /* line 190, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .team .team__item .team__item__content .team__item__ocupation {
+      line-height: 35px;
+      line-height: 2.1875rem;
+      font-size: 20px;
+      font-size: 1.25rem;
+      color: #af882e;
+      text-transform: uppercase;
+      margin-bottom: 20px; }
+      @media (min-width: 740px) {
+        /* line 190, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .team .team__item .team__item__content .team__item__ocupation {
+          margin-bottom: 0; } }
+    /* line 200, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .team .team__item .team__item__content .team__item__text p {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 600; }
+    /* line 206, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+    .single--winemaking .team .team__item:nth-child(2) {
+      margin-top: 40px; }
+      @media (min-width: 1180px) {
+        /* line 206, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .team .team__item:nth-child(2) {
+          margin-top: 100px; } }
+      @media (min-width: 740px) {
+        /* line 211, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .team .team__item:nth-child(2) .team__item__image {
+          float: right; } }
+      @media (min-width: 740px) {
+        /* line 216, C:/wamp/www/ritual/maquetacion/scss/objects/_winemaking.scss */
+        .single--winemaking .team .team__item:nth-child(2) .team__item__content {
+          text-align: right;
+          padding-left: 0;
+          padding-right: 30px; } }
+
+/*.single--winemaking*/
+/*------------------------------------*$GALLERY
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+.gallery {
+  transition: all 300ms;
+  /*&.slider--fullscreen*/
+  /*.slider__gallery*/
+  /*.gallery__content*/
+  /*.gallery__controls*/
+  /*.gallery__desc */ }
+  @media (min-width: 1180px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery {
+      width: 820px;
+      margin: auto; } }
+  @media (min-width: 1180px) {
+    /* line 10, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery.gallery--small {
+      width: 700px; } }
+  /* line 15, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+  .gallery.slider--fullscreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #f8f4e9;
+    z-index: 1100;
+    width: 100%; }
+    /* line 24, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery.slider--fullscreen .slider__gallery {
+      width: 72%;
+      float: left; }
+      /* line 27, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery.slider--fullscreen .slider__gallery .slides {
+        width: 100%;
+        height: 100%; }
+        /* line 30, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery.slider--fullscreen .slider__gallery .slides li {
+          width: 100%;
+          height: 100%;
+          position: relative; }
+          /* line 34, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+          .gallery.slider--fullscreen .slider__gallery .slides li img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            min-height: 0; }
+    /* line 44, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery.slider--fullscreen .gallery__content {
+      border-top: 1px solid #53636e;
+      border-bottom: 1px solid #53636e;
+      width: 28%;
+      float: left;
+      height: 100%; }
+      /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery.slider--fullscreen .gallery__content .gallery__desc {
+        width: 100%; }
+        /* line 52, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery.slider--fullscreen .gallery__content .gallery__desc .gallery__text {
+          float: none;
+          width: 100%; }
+        /* line 56, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery.slider--fullscreen .gallery__content .gallery__desc .gallery__number {
+          clear: both;
+          float: none; }
+  /* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+  .gallery .slider__gallery {
+    transition: all 300ms;
+    /*.slides*/ }
+    /* line 66, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .slider__gallery .slides li {
+      height: 225px; }
+      @media (min-width: 740px) {
+        /* line 66, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .slider__gallery .slides li {
+          height: 490px; } }
+      /* line 71, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery .slider__gallery .slides li img {
+        min-height: 100%; }
+  /* line 77, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+  .gallery .gallery__content {
+    padding: 0 15px 40px;
+    background: white;
+    border-bottom: 1px solid #af882e;
+    position: relative;
+    transition: all 300ms; }
+  /* line 84, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+  .gallery .gallery__controls {
+    display: block;
+    padding: 10px 0 20px;
+    width: 160px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /*.gallery__controls__content*/
+    /*.gallery__fullscreen*/
+    /*.flex-direction-nav*/ }
+    /* line 91, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .gallery__controls .gallery__controls__content {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      width: 140px;
+      float: right; }
+      /* line 98, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery .gallery__controls .gallery__controls__content .gallery__fullscreen svg {
+        fill: #af882e; }
+        /* line 100, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__controls .gallery__controls__content .gallery__fullscreen svg:hover {
+          fill: #af882e; }
+      /* line 105, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery .gallery__controls .gallery__controls__content svg {
+        opacity: .3;
+        stroke: #af882e; }
+        /* line 108, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__controls .gallery__controls__content svg:hover {
+          opacity: 1;
+          stroke: #af882e; }
+    /* line 114, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .gallery__controls .gallery__fullscreen {
+      width: 50px;
+      padding-right: 20px;
+      border-right: 2px solid #af882e;
+      display: none;
+      cursor: pointer; }
+      @media (min-width: 1180px) {
+        /* line 114, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__controls .gallery__fullscreen {
+          display: block; } }
+      /* line 123, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery .gallery__controls .gallery__fullscreen svg {
+        width: 29px;
+        height: 29px; }
+    /* line 128, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .gallery__controls .custom-controls-container {
+      width: 87px; }
+    /* line 131, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .gallery__controls .flex-direction-nav {
+      display: block;
+      width: 87px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around; }
+      /* line 137, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery .gallery__controls .flex-direction-nav li {
+        width: 17px;
+        height: 30px; }
+        /* line 140, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__controls .flex-direction-nav li svg {
+          width: 100%;
+          height: 100%; }
+  /* line 147, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+  .gallery .gallery__desc {
+    max-width: 440px;
+    /*.gallery__number*/
+    /*.gallery__text*/ }
+    /* line 149, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .gallery__desc .gallery__number {
+      height: 60px;
+      width: 60px;
+      padding: 10px 0 20px;
+      line-height: 1.875rem; }
+      @media (min-width: 740px) {
+        /* line 149, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__desc .gallery__number {
+          float: left; } }
+      /* line 157, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+      .gallery .gallery__desc .gallery__number span {
+        margin-right: 5px; }
+        /* line 159, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__desc .gallery__number span:last-child {
+          color: #af882e; }
+    /* line 164, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+    .gallery .gallery__desc .gallery__text {
+      width: 100%;
+      padding: 0; }
+      @media (min-width: 740px) {
+        /* line 164, C:/wamp/www/ritual/maquetacion/scss/objects/_gallery.scss */
+        .gallery .gallery__desc .gallery__text {
+          padding: 14px 15px 20px;
+          width: 380px;
+          float: left; } }
+
+/*.events__single__gallery */
+/*------------------------------------*$ESTATE
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+.single--estate {
+  padding: 0 10px; }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+    .single--estate {
+      padding: 45px 30px 0; } }
+  /* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+  .single--estate .outstanding {
+    margin-bottom: 10px; }
+  /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+  .single--estate .content__text {
+    margin-bottom: 40px;
+    text-align: center; }
+    @media (min-width: 1180px) {
+      /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+      .single--estate .content__text {
+        width: 680px;
+        margin: auto;
+        margin-bottom: 60px; } }
+    /* line 20, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+    .single--estate .content__text p {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 15px; }
+      /* line 24, C:/wamp/www/ritual/maquetacion/scss/objects/_estate.scss */
+      .single--estate .content__text p:last-child {
+        margin-bottom: 0; }
+
+/*------------------------------------*$FARMING
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+.farming--items {
+  display: flex;
+  flex-flow: row wrap; }
+  /* line 7, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+  .farming--items .item {
+    width: 100%;
+    margin-bottom: 30px; }
+    @media (min-width: 740px) {
+      /* line 7, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+      .farming--items .item {
+        width: 50%;
+        padding: 0 15px; } }
+    @media (min-width: 1180px) {
+      /* line 7, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+      .farming--items .item {
+        width: 33.33333%; } }
+    /* line 17, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+    .farming--items .item .item__icon {
+      width: 60px;
+      height: 60px;
+      margin: auto;
+      display: block;
+      margin-bottom: 20px; }
+      /* line 23, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+      .farming--items .item .item__icon svg {
+        fill: #af882e; }
+    /* line 27, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+    .farming--items .item .item__text {
+      text-align: center; }
+      /* line 29, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+      .farming--items .item .item__text p {
+        line-height: 30px;
+        line-height: 1.875rem;
+        font-size: 20px;
+        font-size: 1.25rem; }
+        @media (min-width: 1180px) {
+          /* line 29, C:/wamp/www/ritual/maquetacion/scss/objects/_farming.scss */
+          .farming--items .item .item__text p {
+            line-height: 30px;
+            line-height: 1.875rem;
+            font-size: 18px;
+            font-size: 1.125rem; } }
+
+/*------------------------------------*$NEWS
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+.category {
+  padding: 0 10px;
+  max-width: 360px;
+  margin: auto; }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .category {
+      padding-top: 30px; } }
+  /* line 11, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .category .category__tite {
+    width: 100%;
+    text-transform: uppercase;
+    color: #af882e;
+    border-bottom: 1px solid #af882e;
+    text-align: center;
+    padding-bottom: 10px; }
+  /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .category .category__items {
+    padding: 0 10px;
+    margin-top: 15px; }
+    /* line 22, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .category .category__items .category__item {
+      padding: 0 15px;
+      height: 30px;
+      border: #d6b990;
+      color: #d6b990;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.75rem;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
+      border-radius: 5px;
+      overflow: hidden; }
+      /* line 35, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .category .category__items .category__item:last-child {
+        margin-right: 0; }
+      /* line 38, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .category .category__items .category__item.active {
+        background: #d6b990;
+        color: white; }
+
+@inclue respond-to(desktop) {
+  /* line 43, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .category .category__items .category__item:hover {
+    background: #d6b990;
+    color: white; } }
+
+/* line 51, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+.news__items {
+  padding: 0 10px;
+  display: flex;
+  flex-flow: row wrap; }
+  @media (min-width: 740px) {
+    /* line 51, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .news__items {
+      width: 640px;
+      margin: auto;
+      padding: 0; } }
+  /* line 60, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .news__items .news__item {
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid #af882e; }
+    /* line 64, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .news__items .news__item .news__item__image {
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 30px; }
+      @media (min-width: 740px) {
+        /* line 64, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .news__item__image {
+          height: 400px;
+          padding: 0 20px; } }
+      /* line 72, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .news__item__image img {
+        min-height: 100%; }
+    @media (min-width: 740px) {
+      /* line 76, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .news__item__content {
+        padding: 0 20px; } }
+    /* line 80, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .news__items .news__item .news__item__content .news__item__date {
+      color: #d6b990;
+      margin-bottom: 10px; }
+      /* line 83, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .news__item__content .news__item__date p {
+        line-height: 30px;
+        line-height: 1.875rem;
+        font-size: 16px;
+        font-size: 1rem; }
+      /* line 86, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .news__item__content .news__item__date a {
+        color: #af882e;
+        display: inline-block;
+        line-height: 30px;
+        line-height: 1.875rem;
+        font-size: 16px;
+        font-size: 1rem; }
+    /* line 92, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .news__items .news__item .news__item__content .news__item__title {
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 18px;
+      font-size: 1.125rem;
+      font-weight: 400;
+      margin-bottom: 15px; }
+      @media (min-width: 740px) {
+        /* line 92, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .news__item__content .news__item__title {
+          line-height: 30px;
+          line-height: 1.875rem;
+          font-size: 25px;
+          font-size: 1.5625rem;
+          font-weight: 600; } }
+      /* line 100, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .news__item__content .news__item__title a {
+        color: #000;
+        transition: all 300ms; }
+        /* line 103, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .news__item__content .news__item__title a:hover {
+          text-decoration: underline; }
+    /* line 108, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .news__items .news__item .news__item__content .news__item__more {
+      line-height: 36px;
+      line-height: 2.25rem;
+      font-size: 30px;
+      font-size: 1.875rem;
+      font-family: woolen;
+      color: #000;
+      transition: all 300ms; }
+      @media (min-width: 740px) {
+        /* line 108, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .news__item__content .news__item__more {
+          float: left;
+          width: 150px; } }
+      /* line 117, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .news__item__content .news__item__more:hover {
+        color: #af882e; }
+    /* line 122, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .news__items .news__item .single-share {
+      display: block;
+      float: none; }
+      @media (min-width: 740px) {
+        /* line 122, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .single-share {
+          float: right;
+          width: 300px;
+          text-align: right;
+          padding-top: 0; } }
+      /* line 131, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .news__items .news__item .single-share a {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 30px; }
+        @media (min-width: 740px) {
+          /* line 131, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+          .news__items .news__item .single-share a {
+            margin-right: 0;
+            margin-left: 30px; } }
+        /* line 139, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .single-share a svg {
+          fill: #af882e;
+          transition: all 300ms; }
+        /* line 144, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .news__items .news__item .single-share a:hover svg {
+          fill: #000; }
+
+/* line 152, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+.pagination {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0; }
+  @media (min-width: 740px) {
+    /* line 152, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .pagination {
+      text-align: right;
+      padding: 10px 0; } }
+  /* line 160, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .pagination .pagination__item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px; }
+    /* line 165, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .pagination .pagination__item a {
+      color: #af882e; }
+      /* line 167, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .pagination .pagination__item a.current {
+        color: #000; }
+
+/*Single news*/
+/* line 174, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+.return {
+  width: 100%;
+  background: #d6b990;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  height: 50px;
+  line-height: 3.125rem;
+  display: block;
+  margin-bottom: 40px; }
+  /* line 184, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .return svg {
+    width: 13px;
+    height: 26px;
+    display: inline-block;
+    margin-right: 15px;
+    stroke: white;
+    margin-top: -8px; }
+
+/* line 193, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+.content__single__news {
+  padding: 0 10px; }
+  @media (min-width: 740px) {
+    /* line 193, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news {
+      padding: 0 30px; } }
+  @media (min-width: 1180px) {
+    /* line 198, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news .content__single__news--top {
+      width: 850px;
+      margin: auto; } }
+  /* line 203, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .content__single__news .content__single__news--top .content__single__news__date {
+    margin-bottom: 15px;
+    color: #d6b990;
+    text-align: center; }
+    /* line 207, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news .content__single__news--top .content__single__news__date a {
+      display: inline-block;
+      color: #af882e; }
+  /* line 212, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .content__single__news .content__single__news--top .content__single__title {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 20px;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 15px; }
+    @media (min-width: 740px) {
+      /* line 212, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .content__single__news .content__single__news--top .content__single__title {
+        line-height: 45.6px;
+        line-height: 2.85rem;
+        font-size: 38px;
+        font-size: 2.375rem; } }
+  /* line 220, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .content__single__news .content__single__news--top .single-share {
+    display: block;
+    text-align: center;
+    float: none;
+    margin-bottom: 30px; }
+    /* line 226, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news .content__single__news--top .single-share a svg {
+      fill: #af882e;
+      transition: all 300ms; }
+    /* line 231, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news .content__single__news--top .single-share a:hover svg {
+      fill: #000; }
+  /* line 238, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .content__single__news .content__single__news--bottom {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-top: 1px solid #d6b990; }
+    @media (min-width: 1180px) {
+      /* line 238, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .content__single__news .content__single__news--bottom {
+        width: 700px;
+        margin: auto; } }
+    /* line 246, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news .content__single__news--bottom img {
+      margin-bottom: 30px;
+      display: block; }
+    /* line 250, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .content__single__news .content__single__news--bottom p {
+      margin-bottom: 15px;
+      line-height: 30px;
+      line-height: 1.875rem;
+      font-size: 18px;
+      font-size: 1.125rem; }
+      /* line 253, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .content__single__news .content__single__news--bottom p:last-child {
+        margin-bottom: 0; }
+
+/* line 259, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+.related__news {
+  display: flex;
+  flex-flow: row wrap;
+  color: white; }
+  @media (min-width: 740px) {
+    /* line 259, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .related__news {
+      padding: 0 25px; } }
+  @media (min-width: 1180px) {
+    /* line 259, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .related__news {
+      width: 73.75rem;
+      margin: auto;
+      padding: 0; } }
+  /* line 271, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .related__news .related__title {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 20px;
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    color: #000;
+    padding: 30px 0; }
+    @media (min-width: 740px) {
+      /* line 271, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .related__news .related__title {
+        line-height: 36px;
+        line-height: 2.25rem;
+        font-size: 30px;
+        font-size: 1.875rem; } }
+  /* line 282, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+  .related__news .related__news__item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #d6b990;
+    background: #000;
+    transition: all 300ms; }
+    @media (min-width: 740px) {
+      /* line 282, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .related__news .related__news__item {
+        width: 50%; } }
+    /* line 292, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .related__news .related__news__item:hover {
+      background: #d6b990; }
+    /* line 295, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .related__news .related__news__item .related__image {
+      opacity: .5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      height: 100%; }
+      /* line 302, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .related__news .related__news__item .related__image img {
+        height: 100%;
+        width: auto; }
+        @media (min-width: 1180px) {
+          /* line 302, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+          .related__news .related__news__item .related__image img {
+            height: auto;
+            width: 100%; } }
+    /* line 311, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .related__news .related__news__item .related__content {
+      position: relative;
+      z-index: 200;
+      padding: 40px 20px; }
+      /* line 315, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .related__news .related__news__item .related__content .related__news__date {
+        font-weight: 600;
+        margin-bottom: 10px; }
+        /* line 318, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+        .related__news .related__news__item .related__content .related__news__date a {
+          display: inline-block;
+          color: white; }
+      /* line 324, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .related__news .related__news__item .related__content .related__news__title a {
+        line-height: 24px;
+        line-height: 1.5rem;
+        font-size: 20px;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: white; }
+        @media (min-width: 740px) {
+          /* line 324, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+          .related__news .related__news__item .related__content .related__news__title a {
+            line-height: 30px;
+            line-height: 1.875rem;
+            font-size: 25px;
+            font-size: 1.5625rem; } }
+      /* line 333, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+      .related__news .related__news__item .related__content .related__news__more {
+        line-height: 36px;
+        line-height: 2.25rem;
+        font-size: 30px;
+        font-size: 1.875rem;
+        font-family: woolen;
+        color: white; }
+    /* line 339, C:/wamp/www/ritual/maquetacion/scss/objects/_news.scss */
+    .related__news .related__news__item:last-child {
+      text-align: right;
+      border-bottom: none; }
+
+/*------------------------------------*$TRADE
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+.trade__content {
+  padding: 0 35px; }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+    .trade__content {
+      padding-top: 40px; } }
+  /* line 9, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+  .trade__content .trade__item {
+    position: relative; }
+    /* line 11, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+    .trade__content .trade__item .trade__background {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 140px;
+      height: 115px;
+      z-index: 100; }
+    /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+    .trade__content .trade__item .trade__image {
+      display: none; }
+      @media (min-width: 740px) {
+        /* line 19, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+        .trade__content .trade__item .trade__image {
+          display: block;
+          height: 400px;
+          width: 150px;
+          float: left;
+          padding-right: 20px;
+          position: relative;
+          z-index: 200; } }
+    /* line 31, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+    .trade__content .trade__item .trade__list {
+      position: relative;
+      z-index: 200; }
+      @media (min-width: 740px) {
+        /* line 31, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+        .trade__content .trade__item .trade__list {
+          width: calc(100% - 150px);
+          float: right; } }
+      /* line 38, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+      .trade__content .trade__item .trade__list .trade__list__title {
+        line-height: 24px;
+        line-height: 1.5rem;
+        font-size: 20px;
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 30px;
+        text-transform: uppercase; }
+        @media (min-width: 740px) {
+          /* line 38, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+          .trade__content .trade__item .trade__list .trade__list__title {
+            line-height: 36px;
+            line-height: 2.25rem;
+            font-size: 30px;
+            font-size: 1.875rem;
+            text-align: left;
+            margin-bottom: 15px;
+            margin-left: 45px; } }
+      /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+      .trade__content .trade__item .trade__list .trade__list__content {
+        display: flex;
+        flex-flow: row wrap; }
+        /* line 53, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+        .trade__content .trade__item .trade__list .trade__list__content .trade__list__column {
+          width: 100%;
+          margin-bottom: 25px; }
+          @media (min-width: 740px) {
+            /* line 53, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+            .trade__content .trade__item .trade__list .trade__list__content .trade__list__column {
+              width: 33.33333%; } }
+          @media (min-width: 1180px) {
+            /* line 53, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+            .trade__content .trade__item .trade__list .trade__list__content .trade__list__column {
+              width: 20%; } }
+          /* line 62, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+          .trade__content .trade__item .trade__list .trade__list__content .trade__list__column .trade__list__title {
+            border-bottom: 1px solid #d6b990;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 20px;
+            line-height: 1.25rem;
+            font-size: 16px;
+            font-size: 1rem; }
+            @media (min-width: 740px) {
+              /* line 62, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+              .trade__content .trade__item .trade__list .trade__list__content .trade__list__column .trade__list__title {
+                margin-left: 0; } }
+          /* line 73, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+          .trade__content .trade__item .trade__list .trade__list__content .trade__list__column a {
+            display: block;
+            line-height: 30px;
+            line-height: 1.875rem;
+            font-size: 14px;
+            font-size: 0.875rem;
+            color: #000;
+            text-align: center; }
+            /* line 78, C:/wamp/www/ritual/maquetacion/scss/objects/_trade.scss */
+            .trade__content .trade__item .trade__list .trade__list__content .trade__list__column a:hover {
+              text-decoration: underline; }
+
+/*------------------------------------*$GATHER
+\*------------------------------------*/
+@media (min-width: 740px) {
+  /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .page-gather {
+    padding-top: 50px; } }
+
+/* line 8, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+.page-gather .gather__text {
+  max-width: 540px;
+  margin: auto;
+  text-align: center;
+  padding: 0 10px; }
+
+@media (min-width: 740px) {
+  /* line 14, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .page-gather .full-box {
+    padding: 0;
+    overflow: hidden; }
+    /* line 18, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .page-gather .full-box .redes--box {
+      padding: 0; } }
+
+@media (min-width: 740px) {
+  /* line 23, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .page-gather .box--flex {
+    padding: 0 10px; } }
+
+/* line 29, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+.redes--box {
+  padding: 0 10px;
+  margin-top: 40px; }
+  /* line 32, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .redes--box .redes__title {
+    margin-bottom: 20px; }
+    /* line 34, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__title h2 {
+      float: left;
+      line-height: 28px;
+      line-height: 1.75rem;
+      font-size: 20px;
+      font-size: 1.25rem;
+      text-transform: uppercase; }
+      @media (min-width: 740px) {
+        /* line 34, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+        .redes--box .redes__title h2 {
+          line-height: 36px;
+          line-height: 2.25rem;
+          font-size: 30px;
+          font-size: 1.875rem; } }
+    /* line 42, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__title .redes__button {
+      float: right;
+      text-align: center;
+      height: 30px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: all 300ms;
+      color: #000;
+      padding: 0 15px;
+      line-height: 28px; }
+      /* line 53, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__title .redes__button svg {
+        height: 16px;
+        width: 16px;
+        fill: #000;
+        display: inline-block;
+        transition: all 300ms;
+        vertical-align: top;
+        margin-top: 6px;
+        margin-left: 5px; }
+      /* line 63, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__title .redes__button:hover {
+        background: #000;
+        color: white; }
+        /* line 66, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+        .redes--box .redes__title .redes__button:hover svg {
+          fill: white; }
+  /* line 72, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .redes--box .redes__image {
+    position: relative;
+    clear: both; }
+    /* line 76, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__image:hover .redes__content {
+      opacity: 1; }
+    /* line 80, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__image .redes__content {
+      background: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 300ms; }
+      /* line 87, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__image .redes__content .redes__content__block {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 23px; }
+        /* line 90, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+        .redes--box .redes__image .redes__content .redes__content__block .redes__icon {
+          color: white;
+          display: inline-block;
+          margin-right: 20px; }
+          /* line 94, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+          .redes--box .redes__image .redes__content .redes__content__block .redes__icon svg {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            vertical-align: top;
+            margin-top: 3px; }
+  /* line 106, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .redes--box .redes__text {
+    line-height: 22px;
+    line-height: 1.375rem;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #000;
+    margin-top: 10px; }
+    /* line 110, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__text a {
+      display: inline-block;
+      color: #af882e; }
+  /* line 115, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .redes--box .redes__item {
+    display: none; }
+    @media (min-width: 740px) {
+      /* line 115, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item {
+        display: block;
+        width: 50%;
+        float: left;
+        padding: 0 20px 0 89px; } }
+    @media (min-width: 1180px) {
+      /* line 115, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item {
+        width: 33.33333%; } }
+    /* line 126, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__item:nth-child(2) {
+      display: block; }
+    @media (max-width: 1180px) {
+      /* line 129, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item:nth-child(2n) {
+        clear: left; } }
+    @media (min-width: 1180px) {
+      /* line 134, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item:last-child {
+        display: none; } }
+    /* line 139, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__item .redes__image__account {
+      width: 54px;
+      height: 54px;
+      border-radius: 27px;
+      overflow: hidden;
+      display: inline-block;
+      margin-bottom: 10px; }
+      @media (min-width: 740px) {
+        /* line 139, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+        .redes--box .redes__item .redes__image__account {
+          margin-left: -69px;
+          margin-bottom: -20px; } }
+      /* line 150, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item .redes__image__account img {
+        width: 100%;
+        height: 100%; }
+    /* line 155, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__item .redes__item__title {
+      width: calc(100% - 64px);
+      padding-left: 15px;
+      display: inline-block;
+      vertical-align: top; }
+      /* line 160, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item .redes__item__title a {
+        color: #af882e;
+        line-height: 3.375rem; }
+    /* line 165, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__item .redes__item__text {
+      margin-top: 10px;
+      font-weight: 600; }
+      /* line 168, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item .redes__item__text p {
+        line-height: 30px;
+        line-height: 1.875rem;
+        font-size: 16px;
+        font-size: 1rem; }
+      /* line 171, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item .redes__item__text a {
+        color: #af882e;
+        display: inline-block; }
+    /* line 177, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+    .redes--box .redes__item .redes__item__buttons .redes__item__button {
+      display: inline-block;
+      margin-right: 40px;
+      color: #d6b990;
+      padding: 20px 0; }
+      /* line 182, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+      .redes--box .redes__item .redes__item__buttons .redes__item__button svg {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: top;
+        fill: #d6b990; }
+
+@media (min-width: 740px) {
+  /* line 194, C:/wamp/www/ritual/maquetacion/scss/objects/_gather.scss */
+  .redes--box--twitter .redes__title {
+    width: 280px;
+    margin: 30px auto 40px; } }
+
+/*------------------------------------*		$COMPONENTS
+\*------------------------------------*/
+/*------------------------------------*$FORM
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+.box--contact {
+  width: 100%;
+  max-width: 630px;
+  margin: auto;
+  padding: 0 10px; }
+  @media (min-width: 740px) {
+    /* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact {
+      padding: 0; } }
+  /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+  .box--contact .input-group {
+    width: 100%;
+    position: relative;
+    float: left;
+    margin-bottom: 25px; }
+    @media (min-width: 740px) {
+      /* line 12, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+      .box--contact .input-group {
+        width: 50%;
+        float: left;
+        padding: 0 15px; }
+        /* line 21, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+        .box--contact .input-group.big-group {
+          width: 100%; } }
+    /* line 25, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group.send {
+      width: 210px;
+      float: right; }
+    /* line 29, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group:after {
+      content: '';
+      display: block;
+      float: none;
+      clear: both; }
+    /* line 35, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group.big-group {
+      width: 100%; }
+    /* line 39, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group.error label {
+      color: #A73232; }
+    /* line 42, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group.error input, .box--contact .input-group.error textarea {
+      border: 1px solid #A73232; }
+    /* line 45, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group.error .error {
+      display: block; }
+    /* line 50, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group.exito input, .box--contact .input-group.exito textarea {
+      border: 1px solid #448B3F; }
+    /* line 54, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group .error {
+      display: none;
+      font-size: 0.75rem;
+      position: absolute;
+      bottom: -18px;
+      right: 0;
+      color: #A73232; }
+    /* line 62, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group label {
+      background: #f8f4e9;
+      position: absolute;
+      top: -10px;
+      left: -3px;
+      font-size: 0.875rem;
+      padding-right: 5px;
+      z-index: 200; }
+      @media (min-width: 740px) {
+        /* line 62, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+        .box--contact .input-group label {
+          left: 12px; } }
+    /* line 74, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group input, .box--contact .input-group textarea, .box--contact .input-group .style-select {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #B3B0AE;
+      font-size: 0.875rem;
+      height: 35px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      overflow: hidden; }
+      /* line 84, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+      .box--contact .input-group input:focus, .box--contact .input-group textarea:focus, .box--contact .input-group .style-select:focus {
+        outline: none; }
+    /* line 88, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group textarea {
+      height: 75px;
+      resize: none;
+      padding: 10px; }
+    /* line 93, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group input[type="submit"] {
+      border: 2px solid #D3BE8B;
+      -webkit-transition: all 300ms;
+      -o-transition: all 300ms;
+      transition: all 300ms; }
+      /* line 98, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+      .box--contact .input-group input[type="submit"]:hover {
+        background: #D3BE8B;
+        color: #fff; }
+    /* line 103, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .input-group .style-select {
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 100%;
+      padding: 0; }
+      /* line 109, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+      .box--contact .input-group .style-select svg {
+        fill: #000;
+        position: absolute;
+        right: 12px;
+        top: 13px;
+        width: 10px;
+        height: 8px;
+        z-index: 300; }
+      /* line 118, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+      .box--contact .input-group .style-select select {
+        width: 100%;
+        outline: none;
+        display: inline-block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 100;
+        background-color: transparent;
+        border: none;
+        height: 35px;
+        padding: 0 15px; }
+  /* line 135, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+  .box--contact .message {
+    width: 100%;
+    font-size: 0.9375rem;
+    text-align: center;
+    display: block;
+    clear: both; }
+    /* line 141, C:/wamp/www/ritual/maquetacion/scss/objects/_form.scss */
+    .box--contact .message .success-msg {
+      background: #f0b2b2; }
+
+/*------------------------------------*$BTN
+\*------------------------------------*/
+/* line 4, C:/wamp/www/ritual/maquetacion/scss/objects/_btn.scss */
+.btn {
+  height: 32px;
+  line-height: 32px;
+  line-height: 2rem;
+  font-size: 16px;
+  font-size: 1rem; }
+  /* line 7, C:/wamp/www/ritual/maquetacion/scss/objects/_btn.scss */
+  .btn.btn__border {
+    border: 1px solid white;
+    line-height: 30px;
+    line-height: 1.875rem;
+    font-size: 16px;
+    font-size: 1rem;
+    border-radius: 5px; }
+    @media (min-width: 1180px) {
+      /* line 7, C:/wamp/www/ritual/maquetacion/scss/objects/_btn.scss */
+      .btn.btn__border {
+        transition: all 300ms; }
+        /* line 13, C:/wamp/www/ritual/maquetacion/scss/objects/_btn.scss */
+        .btn.btn__border:hover {
+          background: white;
+          color: #000; }
+          /* line 16, C:/wamp/www/ritual/maquetacion/scss/objects/_btn.scss */
+          .btn.btn__border:hover svg {
+            fill: #000; } }
+
+/*.btn*/
+/*------------------------------------*    		$HERO
+\*------------------------------------*/
+/*------------------------------------*    		$BREADCRUMBS
+\*------------------------------------*/
+/*------------------------------------*    $EXTRA HELP
+\*------------------------------------*/
+/* Basics */
+/* line 2, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.left, .alignleft {
+  float: left; }
+
+/* line 5, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.right, .alignright {
+  float: right; }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 16, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 25, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 42, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 55, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 72, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+/* line 77, C:/wamp/www/ritual/maquetacion/scss/generic/_helpers.scss */
+.clearfix:after {
+  clear: both; }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /* line 7, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  /* line 15, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline; }
+  /* line 19, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  /* line 23, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  /* line 32, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+  /* line 37, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /* line 42, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+  /* line 47, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid; }
+  /* line 51, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  img {
+    max-width: 100% !important; }
+  /* line 57, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  /* line 63, C:/wamp/www/ritual/maquetacion/scss/generic/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+/*# sourceMappingURL=main.css.map */

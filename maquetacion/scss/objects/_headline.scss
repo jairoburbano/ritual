@@ -1,0 +1,186 @@
+/*------------------------------------*\
+$HEADLINE
+\*------------------------------------*/
+.headline {
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+    z-index: $level6;
+    width: 100%;
+    padding-top: 100px;
+    @include respond-to(tablet) {
+        padding-top: 0;
+        z-index: $level8;
+    }
+    &.headline--big {
+        padding: 25px 0 30px 0;
+        @include respond-to(tablet) {
+            padding: 50px 0 30px 0;
+        }
+        .headline__title {
+            @include font-size(30px, 28px);
+            color: $principal;
+            @include respond-to(tablet) {
+                @include font-size(38px, 45.6px);
+                &::after, &::before {
+                    background: rgba($principal, .5);
+                }
+            }
+        }/*.headline__title*/
+        .headline__text {
+            color: $principal;
+            @include font-size(28px, 33.6px);
+            @include respond-to(tablet) {
+                @include font-size(34px, 40.8px);
+            }
+        }/*.headline__text*/
+    }/*&.headline--big*/
+    &.headline--contrast {
+        .headline__title {
+            @include respond-to(tablet) {
+                color: white;
+                &::after, &::before {
+                    background: rgba(white, .5);
+                }
+            }
+        }
+        .headline__text {
+            @include respond-to(tablet) {
+                color: white;
+            }
+        }
+    }
+    &.headline--button {
+        width: 210px;
+        height: 36px;
+        text-transform: uppercase;
+        text-align: center;
+        background: $background;
+        border-radius: 18px;
+        padding: 0;
+        margin: -16px auto 0;
+        z-index: $level3;
+        position: relative;
+        transition: all 300ms;
+        &:hover {
+            @include respond-to(desktop) {
+                width: 240px;
+                .headline__title {
+                    color: $principal;
+                }
+            }
+        }
+        @include respond-to(tablet) {
+            @include font-size(38px, 45.6px);
+            margin: 15px auto;
+            &::after, &::before {
+                content: '';
+                height: 1px;
+                width: 115px;
+                background: rgba($background, .5);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -235px;
+            }
+            &::after {
+                margin-left: 120px;
+            }
+        }
+        .headline__title {
+            transition: color 300ms;
+            @include respond-to(tablet) {
+                &::after, &::before {
+                    display: none;
+                }
+            }
+        }/*.headline__title {*/
+        a {
+            color: white;
+            @include font-size(16px, 40px);
+            vertical-align: top;
+        }
+    }/*&.headline--button*/
+    &.headline__dark {
+        .headline__logo {
+            @include respond-to(tablet) {
+                svg {
+                    fill: white;
+                }
+            }
+        }
+        .headline__title {
+            color: $principal;
+            @include respond-to(tablet) {
+                color: white;
+            }
+        }
+        .headline__text {
+            color: $principal;
+            @include respond-to(tablet) {
+                color: white;
+            }
+        }
+        &.headline__dark--always {
+            .headline__title {
+                @include respond-to(tablet) {
+                    color: $principal;
+                    &::after, &::before {
+                        background: $principal;
+                    }
+                }
+            }
+            .headline__text {
+                @include respond-to(tablet) {
+                    color: $principal;
+                }
+            }
+        }
+    }
+    &.headline--absolute {
+        margin-bottom: 30px;
+        @include respond-to(tablet) {
+            position: absolute;
+            left: 50%;
+            top: 150px;
+            transform: translate(-50%, 0);
+        }
+    }/*.headline--absolute*/
+    .headline__logo {
+        height: 35px;
+        margin-bottom: 15px;
+        svg {
+            fill: $principal;
+            margin: auto;
+        }
+    }/*.headline__logo*/
+    .headline__title {
+        @include font-size(26px, 28px);
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        @include respond-to(tablet) {
+            @include font-size(38px, 45.6px);
+            &::after, &::before {
+                content: '';
+                height: 1px;
+                width: 115px;
+                display: inline-block;
+                margin: 0 25px;
+                background: rgba(white, .5);
+                vertical-align: middle;
+            }
+        }
+    }/*.headline__title*/
+    .headline__text {
+        @include font-size(24px, 28.8px);
+        font-family: Woolen;
+        color: white;
+        text-transform: capitalize;
+        @include respond-to(tablet) {
+            @include font-size(34px, 30.8px);
+            max-width: 600px; 
+            margin: auto;
+        }
+    }/*.headline__text*/
+}/*.headline*/

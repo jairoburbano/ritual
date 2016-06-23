@@ -1,0 +1,249 @@
+/*------------------------------------*\
+$FORM
+\*------------------------------------*/
+.message {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+.container-contact {
+    .message {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        .success-msg {
+            background: rgba(116, 178, 111, .8);
+            color: white;
+            padding: 15px;
+        }
+        .warning-msg {
+            background: rgba(240, 178, 178, .8);
+            color: white;
+            padding: 15px;
+        }
+    }
+}
+form {
+    position: relative;
+}
+.box--contact {
+    width: 100%;
+    max-width: 630px;
+    margin: auto;
+    padding: 0 10px;
+    @include respond-to(tablet) {
+        padding: 0;
+    }
+    @include respond-to(tablet) {
+        max-width: 920px;
+    }
+    &.importers--form {
+        margin-top: 25px;
+        padding: 0;
+        @include respond-to(desktop) {
+            padding-right: 25px;
+        }
+        .input-group {
+            @include respond-to(tablet) {
+                width: 100%;
+            }
+            &.big-group {
+                @include respond-to(tablet) {
+                    width: 100%;
+                }
+            }
+            input {
+                color: $principal;
+            }
+            label {
+                @include font-size(14px, 16.8px);
+                font-weight: 600;
+                padding-left: 5px;
+                @include less-than(tablet) {
+                    position: relative;
+                    background-color: transparent;
+                    top: auto;
+                    left: auto;
+                }
+                @include respond-to(tablet) {
+                    padding-left: 3px;
+                }
+            }
+        }
+    }
+    h2 {
+        @include font-size(20px, 24px);
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        @include respond-to(tablet) {
+            @include font-size(30px, 36px);
+        }
+    }
+    .input-group {
+        width: 100%;
+        position: relative;
+        float: left;
+        margin-bottom: 25px;
+        @include respond-to(tablet) {
+            width: 50%;
+            float: left;
+            padding: 0 15px;
+            &.big-group {
+                width: 100%;
+            }
+        }
+        @include respond-to(desktop) {
+            width: (100% / 3);
+        }
+        &.send {
+            width: 210px;
+            float: right;
+        }
+        &:after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+        &.big-group {
+            width: 100%;//ancho de 1 input-group * 2 + 1 margen (4%)
+            @include respond-to(desktop) {
+                width: 66.666%;
+            }
+        }
+        &.error {
+            label {
+                color: #A73232;
+            }
+            input, textarea {
+                border: 1px solid #A73232;
+            }
+            .error{
+                display: block;
+            }
+        }
+        &.exito {
+            input, textarea {
+                border: 1px solid #448B3F;
+            }
+        }
+        .error{
+            display: none;
+            font-size: cr(12px);
+            position: absolute;
+            bottom: -18px;
+            right: 0;
+            color: #A73232;
+            @include respond-to(tablet) {
+                right: 20px;
+            }
+        }
+        label {
+            background: $cream;
+            position: absolute;
+            top: -10px;
+            left: -3px;
+            font-size: cr(14px);
+            padding-right: 5px;
+            z-index: $level2;
+            @include respond-to(tablet) {
+                left: 15px;
+            }
+        }
+        input, textarea, .style-select {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #B3B0AE;
+            font-size: cr(14px);
+            height: 35px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            height: 75px;
+            resize: none;
+            padding: 10px;
+            @include respond-to(desktop) {
+                height: 95px;
+            }
+        }
+        input[type="submit"] {
+            border: 2px solid $destacado;
+            -webkit-transition: all 300ms;
+            -o-transition: all 300ms;
+            transition: all 300ms;
+            &:hover {
+                background: $destacado;
+                color: white;
+            }
+        }
+        .style-select {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+            padding: 0;
+            &.error {
+                display: block;
+                position: relative;
+                right: auto;
+                bottom: auto;
+                border: 1px solid #A73232;
+                color: $principal;
+                overflow: visible;
+                .error{
+                    display: none;
+                    font-size: cr(12px);
+                    position: absolute;
+                    bottom: -18px;
+                    right: 0;
+                    color: #A73232;
+                    @include respond-to(tablet) {
+                        right: 0;
+                    }
+                }
+            }
+            svg {
+                fill: $principal;
+                position: absolute;
+                right: 12px;
+                top: 13px;
+                width: 10px;
+                height: 8px;
+                z-index: $level3;
+            }
+            select {
+                width: 100%;
+                outline:none;
+                display: inline-block;
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                appearance:none;
+                cursor:pointer;
+                position: relative;
+                z-index: $level1;
+                background-color: transparent;
+                border: none;
+                height: 35px;
+                padding: 0 15px;
+            }
+        }
+    }
+    .message {
+        width: 100%;
+        font-size: cr(15px);
+        text-align: center;
+        display: block;
+        clear: both;
+    }
+}

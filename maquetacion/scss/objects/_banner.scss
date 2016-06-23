@@ -1,0 +1,103 @@
+/*------------------------------------*\
+$BANNER
+\*------------------------------------*/
+.banner {
+    padding-top: 80px;
+    background-size: cover;
+    background-position: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $level7;
+    height: 80px;
+    width: 100%;
+    @include respond-to(tablet) {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: 320px;
+        padding-top: 100px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: rgba(0,0,0,0.8);
+        background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,.3) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+        @include respond-to(tablet) {
+            height: 320px;
+        }
+    }
+    &.banner--principal {
+        height: 100%;
+        position: relative;
+        @include respond-to(desktop) {
+            padding-top: 150px;
+        }
+        &::after {
+            height: 570px;
+            display: none;
+            background: linear-gradient(to bottom, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%);
+            @include respond-to(tablet) {
+                display: block;
+                height: 480px;
+            }
+            @include respond-to(desktop) {
+                height: 570px;
+            }
+        }
+        .banner__content {
+            position: relative;
+            z-index: $level2;
+            height: 100%;
+            .banner__logo {
+                width: 408px;
+                margin: auto;
+                @include respond-to(desktop) {
+                    width: 605px;
+                }
+                svg {
+                    fill: $cream;
+                }
+            }/*.banner__logo*/
+            .banner__text {
+                width: 570px;
+                margin: auto;
+                text-align: center;
+                @include respond-to(desktop) {
+                    width: 700px;
+                    margin-top: 20px;
+                }
+                p {
+                    @include font-size(40px, 40px);
+                    font-family: woolen;
+                    color: $cream;
+                    @include respond-to(desktop) {
+                        @include font-size(45px, 45px);
+                    }
+                }
+            }/*.banner__text*/
+            .banner__scroll {
+                position: absolute;
+                bottom: 15px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                text-align: center;
+                color: white;
+                @include font-size(12px, 14.4px);
+                cursor: pointer;
+                svg {
+                    fill: transparent;
+                    stroke: white;
+                    width: 26px;
+                    height: 13px;
+                }
+            }/*.banner__scroll*/
+        }/*.banner__content*/
+    }/*&.banner--principal*/
+}/*.banner*/

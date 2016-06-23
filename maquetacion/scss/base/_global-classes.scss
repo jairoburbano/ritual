@@ -1,0 +1,11 @@
+.wrap {
+	margin: auto;
+	max-width: cr(1180px);
+    position: relative;
+}
+.no-mobile {
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+    }
+}

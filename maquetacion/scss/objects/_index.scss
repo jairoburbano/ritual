@@ -1,0 +1,71 @@
+/*------------------------------------*\
+$INDEX
+\*------------------------------------*/
+.down-text {
+    @include respond-to(tablet) {
+        max-width: 650px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 50px;
+        p {
+            @include font-size(16px, 30px);
+            font-weight: 600;
+        }
+    }
+}
+.lets-gather--home {
+    position: relative;
+    @include respond-to(desktop) {
+        background-size: 100% 623px;
+        max-width: 1800px;
+        margin: auto;
+        .headline {
+            max-height: 165px;
+        }
+    }
+    .lets-gather--home__bg {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1;
+        display: none;
+        background: #d5b890;
+        .image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: .5;
+        }
+        @include respond-to(tablet) {
+            display: block;
+            height: 600px;
+        }
+        @include respond-to(tableth) {
+            height: 753px;
+        }
+        @include respond-to(desktop) {
+            display: block;
+            height: 623px;
+        }
+        img {
+            background-position: center;
+        }
+    }
+    &::after {
+        content: '';
+        height: 380px;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+}

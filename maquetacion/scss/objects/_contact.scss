@@ -1,0 +1,172 @@
+/*------------------------------------*\
+$CONTACT
+\*------------------------------------*/
+.top-box {
+    position: relative;
+}
+.content__contact {
+    padding: 0 10px;
+    clear: both;
+    @include respond-to(tablet) {
+        padding: 70px 20px 90px;
+    }
+    @include respond-to(desktop) {
+        max-width: cr(1180px);
+        margin: auto;
+        padding: 0;
+    }
+    .content__contact__text {
+        border: 1px solid $destacado;
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            width: 50%;
+            float: right;
+        }
+        @include respond-to(desktop) {
+            width: 380px;
+            position: relative;
+            z-index: $level2;
+            margin-top: 70px;
+        }
+        .content__contact__title {
+            background: $cream;
+            margin: -44px 0 25px 20px;
+            width: 190px;
+            @include respond-to(tablet) {
+                width: 230px;
+                margin-top: -38px;
+            }
+            h2 {
+                @include font-size(20px, 24px);
+                display: inline-block;
+                vertical-align: bottom;
+                text-transform: uppercase;
+                @include respond-to(tablet) {
+                    @include font-size(30px, 36px);
+                }
+            }
+            img  {
+                width: 63px;
+                height: 56px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+        .content__contact__block {
+            padding: 0 5px 30px 15px;
+            .content__contact__item {
+                font-weight: 600;
+                margin-top: 20px;
+                h3 {
+                    @include font-size(18px, 21.6px);
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                }
+                a {
+                    display: inline-block;
+                    color: $pinot;
+                }
+            }
+            .mtop {
+                margin-top: 20px;
+            }
+        }
+        .btn {
+            width: 100px;
+            height: 28px;
+            line-height: cr(26px);
+            border: 1px solid $principal;
+            color: $principal;
+            transition: all 300ms;
+            display: block;
+            text-align: center;
+            margin: 10px 0 0 0;
+            &:hover {
+                background: $principal;
+                color: white;
+            }
+        }
+    }
+    .map {
+        width: 300px;
+        margin-bottom: 45px;
+        @include respond-to(tablet) {
+            width: 50%;
+            float: left;
+            padding-right: 25px;
+        }
+        @include respond-to(desktop) {
+            height: 660px;
+            width: calc(100% - 380px);
+            padding: 0;
+        }
+        .map__image {
+
+        }
+        #map {
+            width: 100%;
+            height: 192px;
+            display: block;
+            @include respond-to(desktop) {
+                margin-top: 70px;
+                width: calc(100% - 30px);
+                height: 400px;
+            }
+        }
+        .map__button {
+            width: 126px;
+            height: 28px;
+            line-height: cr(26px);
+            border: 1px solid $principal;
+            color: $principal;
+            margin: auto;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 300ms;
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            @include respond-to(tablet) {
+                float: left;
+                clear: both;
+                margin-bottom: 25px;
+            }
+            @include respond-to(desktop) {
+                margin: 0 30px 0 0;
+                padding: 0;
+            }
+            &:hover {
+                background: $principal;
+                color: white;
+            }
+        }
+        .map__text {
+            @include respond-to(desktop) {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-flow: row-reverse wrap;
+                justify-content: space-between;
+                padding-top: 20px;
+            }
+            a {
+                color: $destacado;
+            }
+            p {
+                clear: both;
+                display: block;
+                text-align: center;
+                margin-top: 15px;
+                @include respond-to(tablet) {
+                    line-height: cr(22px);
+                    text-align: left;
+                    margin-top: 0;
+                }
+                @include respond-to(desktop) {
+                    width: 320px;
+                }
+            }
+        }
+    }
+}

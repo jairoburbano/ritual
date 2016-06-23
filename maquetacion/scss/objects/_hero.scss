@@ -1,0 +1,55 @@
+/*------------------------------------*\
+$HERO
+\*------------------------------------*/
+.visit-us {
+    width: 100%;
+    height: 100%;
+    background: $principal;
+    .headline {
+        padding-top: 0;
+        margin-bottom: 30px;
+        @include respond-to(tablet) {
+            margin-bottom: 80px;
+        }
+    }
+    .visit__image {
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        opacity: .4;
+        background-position: center;
+    }
+    .visit__text {
+        position: absolute;
+        left: 50%;
+        top: 150px;
+        transform: translate(-50%, 0);
+        width: 100%;
+        p {
+            font-family: Woolen;
+            font-size: cr(34px);
+            line-height: cr(40.8px);
+            text-align: center;
+            max-width: 560px; 
+            width: 90%;
+            margin: auto;
+            color: $cream;
+        }
+        .headline {
+            &.headline--button {
+                margin: 15px auto;
+                width: 280px;
+                font-size: cr(16px);
+                &:hover {
+                    width: 320px;
+                }
+                &::before {
+                    margin-left: -275px;
+                }
+                &::after {
+                    margin-left: 160px;
+                }
+            }
+        }
+    }
+}

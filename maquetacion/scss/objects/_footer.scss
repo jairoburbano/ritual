@@ -1,0 +1,160 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: $level1;
+    padding: 0 10px;
+    width: 100%;
+    @include respond-to(tablet) {
+        padding: 0 24px;
+    }
+    .logo-foo {
+        width: 100%;
+        height: 37px;
+        margin: auto;
+        position: relative;
+        margin-bottom: -6px;
+        @include respond-to(tablet) {
+            position: absolute;
+            left: 50%;
+            bottom: 15px;
+            transform: translate(-50%, 0);
+            width: 53px;
+            height: 46px;
+        }
+        @include respond-to(tablet) {
+            width: 88px;
+            height: 75px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+            height: 1px;
+            width: calc(50% - 32px);
+            background: rgba(white, .5);
+            @include respond-to(tablet) {
+                display: none;
+            }
+        }
+        &::before {
+            left: auto;
+            right: 0;
+        }
+    }/*.logo-foo*/
+    .menu-foo {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        height: 34px;
+        border-bottom: 1px solid rgba(white, .5);
+        @include respond-to(tablet) {
+            width: calc(50% - 50px);
+            float: right;
+            height: 60px;
+            border-top: 1px solid rgba(white, .5);
+            border-bottom: none;
+            padding-right: 50px;
+        } 
+        @include respond-to(desktop) {
+            width: calc(50% - 70px);
+            height: 70px;
+        }
+        li {
+            a {
+                color: white;
+                @include font-size(18px, 34px);
+                font-weight: 600;
+                opacity: .8;
+                transition: all 300ms;
+                &.current-menu-item, &.current-page-ancestor, &:hover {
+                    opacity: 1;
+                }
+                @include respond-to(tablet) {
+                    @include font-size(16px, 60px);
+                }
+                @include respond-to(desktop) {
+                    line-height: cr(70px);
+                    opacity: .5;
+                }
+            }
+        }
+    }/*.menu-foo*/
+    .varieties-foo {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        height: 43px;
+        @include respond-to(tablet) {
+            width: calc(50% - 50px);
+            float: left;
+            height: 60px;
+            border-top: 1px solid rgba(white, .5);
+            overflow: hidden;
+        }
+        @include respond-to(desktop) {
+            width: calc(50% - 70px);
+            height: 60px;
+        }
+        a {
+            height: 43px;
+            padding: 0 8px 0 0;
+            display: block;
+            width: 25%;
+            &:last-child {
+                padding: 0;
+            }
+            @include respond-to(tablet) {
+                margin-top: 24px;
+                height: 11px;
+                line-height: cr(60px);
+                &:nth-child(3) {
+                    height: 20px;
+                }
+                svg {
+                    vertical-align: top;
+                }
+            }
+            @include respond-to(desktop) {
+                line-height: cr(60px);
+            }
+        }
+    }/*.varieties-foo*/
+    .byreactor {
+        color: white;
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding-top: 4px;
+        padding-bottom: 10px;
+        @include respond-to(tablet) {
+            position: absolute;
+            width: 50px;
+            right: 20px;
+            top: 17px;
+        }
+        @include respond-to(desktop) {
+            opacity: .5;
+            transition: all 300ms;
+            top: 22px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        svg {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            stroke: white;
+            fill: transparent;
+        }
+    }
+}/*.footer*/

@@ -1,0 +1,201 @@
+/*------------------------------------*\
+$PRE-FOO
+\*------------------------------------*/
+.pre-foo {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    display: block;
+    &::after {
+        content: '';
+        width: 100%;
+        height: 160px;
+        background: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+    }
+    img {
+        width: 100%;
+        display: block;
+    }
+    &.pre-foo--home {
+        margin-top: -60px;
+        @include respond-to(tablet) {
+            margin-top: -24%;
+        }
+    }
+    &.pre-foo--wines {
+        @include respond-to(tablet) {
+            margin-top: -20%;
+        }
+    }
+    &.pre-foo--single-wines {
+        @include respond-to(tablet) {
+            margin-top: -8%;
+        }
+    }
+    &.pre-foo--estate {
+        @include respond-to(tablet) {
+            margin-top: -10%;
+        }
+    }
+    &.pre-foo--trade {
+        @include respond-to(tablet) {
+            margin-top: -12%;
+        }
+    }
+    &.pre-foo--gather {
+        @include respond-to(tablet) {
+            margin-top: -10%;
+        }
+    }
+    &.pre-foo--contact {
+        @include respond-to(tablet) {
+            margin-top: -15%;
+        }
+    }
+    &.pre-foo--importers {
+        @include respond-to(tablet) {
+            margin-top: -20%;
+        }
+    }
+    &.pre-foo--find {
+        @include respond-to(tablet) {
+            margin-top: -9%;
+        }
+    }
+    @-moz-document url-prefix() {
+        &.pre-foo--home {
+            margin-top: 0;
+            @include respond-to(tablet) {
+                margin-top: 0;
+                top: -34%;
+                margin-bottom: -34%;
+            }
+            @include respond-to(desktop) {
+                top: -50%;
+                margin-bottom: -50%;
+            }
+            @include respond-to(wide) {
+                top: -45%;
+                margin-bottom: -45%;
+            }
+        }
+        &.pre-foo--wines {
+            @include respond-to(tablet) {
+                margin-top: 0;
+                top: -20%;
+                margin-bottom: -20%;
+            }
+            @include respond-to(desktop) {
+                margin-top: 0;
+                top: -30%;
+                margin-bottom: -30%;
+            }
+        }
+        &.pre-foo--single-wines {
+            @include respond-to(tablet) {
+                margin-top: -8%;
+            }
+        }
+        &.pre-foo--estate {
+            @include respond-to(tablet) {
+                margin-top: 0;
+                top: -20%;
+                margin-bottom: -20%;
+            }
+            @include respond-to(desktop) {
+                top: -30%;
+                margin-bottom: -30%;
+            }
+        }
+        &.pre-foo--trade {
+             @include respond-to(tablet) {
+                margin-top: 0;
+                top: -20%;
+                margin-bottom: -20%;
+            }
+            @include respond-to(desktop) {
+                top: -30%;
+                margin-bottom: -30%;
+            }
+        }
+        &.pre-foo--gather {
+             @include respond-to(tablet) {
+                margin-top: 0;
+                top: -20%;
+                margin-bottom: -20%;
+            }
+            @include respond-to(desktop) {
+                top: -30%;
+                margin-bottom: -30%;
+            }
+        }
+        &.pre-foo--contact {
+             @include respond-to(tablet) {
+                margin-top: 0;
+                top: -20%;
+                margin-bottom: -20%;
+            }
+            @include respond-to(desktop) {
+                top: -30%;
+                margin-bottom: -30%;
+            }
+        }
+        &.pre-foo--importers {
+             @include respond-to(tablet) {
+                margin-top: 0;
+                top: -30%;
+                margin-bottom: -30%;
+            }
+            @include respond-to(desktop) {
+                top: -40%;
+                margin-bottom: -40%;
+            }
+        }
+        &.pre-foo--find {
+             @include respond-to(tablet) {
+                margin-top: 0;
+                top: -15%;
+                margin-bottom: -15%;
+            }
+            @include respond-to(desktop) {
+                top: -25%;
+                margin-bottom: -25%;
+            }
+        }
+    }
+    .pre-foo__content {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        padding: 0 15px;
+        @include less-than(tablet) {
+            display: none;
+        }
+        .item--moon {
+            color: $moon;
+            text-align: center;
+            p {
+                margin-top: 10px;
+                line-height: cr(16px);
+            }
+            svg {
+                max-height: 36px;
+                max-width: 36px;
+                margin: auto;
+                fill: $moon;
+                display: block;
+            }
+        }/*.item--moon*/
+    }/*.pre-foo__content*/
+}/*.pre-foo*/
